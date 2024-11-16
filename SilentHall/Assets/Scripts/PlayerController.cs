@@ -10,6 +10,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Vector3 move;
     public float walkingSpeed = 3f;
     public float runningSpeed = 5f;
+    bool isRunning = false;
+
+    [Header("Stamina System: ")]
+    public float currentStamina;
+    public float maxStamina = 100f;
+    public float staminaDrainRate = 20f;
+    public float staminaRegenRate = 5f;
+    public float staminaRegenDelay = 2f;
+    public float staminaRegenTimer = 0f;
 
     [Header("Look: ")]
     [SerializeField] Vector2 look;
@@ -26,13 +35,31 @@ public class PlayerController : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        currentStamina = maxStamina;
     }
 
     void Update()
     {
         GetInput();
-        RaycastCheck();
-        Drop();
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (!haveItem)
+            {
+                RaycastCheck();
+            }
+            else
+            {
+                UseItem();
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q) && haveItem)
+        {
+            Drop();
+        }
+
+        RegenStamina();
     }
 
     private void FixedUpdate()
@@ -65,14 +92,32 @@ public class PlayerController : MonoBehaviour
         Vector3 desiredMoveDirection = forward * move.z + right * move.x;
 
         // Apply movement speed
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift) && currentStamina > 0)
         {
-            rb.velocity = desiredMoveDirection * runningSpeed;
+            isRunning = true;
+            currentStamina -= staminaDrainRate * Time.fixedDeltaTime;
+            currentStamina = Mathf.Clamp(currentStamina, 0, maxStamina);
+            //rb.velocity = desiredMoveDirection * runningSpeed;
+            rb.MovePosition(rb.position + desiredMoveDirection * runningSpeed * Time.fixedDeltaTime);
+            staminaRegenTimer = 0f;
+        }
+        else if (currentStamina <= 0) // Stamina depleted
+        {
+            isRunning = false;
+
+            // Slow down to a crawl or stop entirely
+            rb.MovePosition(rb.position + desiredMoveDirection * (walkingSpeed * 0.5f) * Time.fixedDeltaTime);
+
+            Debug.Log("Stamina depleted. Slowing down...");
         }
         else
         {
-            rb.velocity = desiredMoveDirection * walkingSpeed;
+            isRunning = false;
+            //rb.velocity = desiredMoveDirection * walkingSpeed;
+            rb.MovePosition(rb.position + desiredMoveDirection * walkingSpeed * Time.fixedDeltaTime);
         }
+        Debug.Log($"Current Stamina: {currentStamina}");
+        cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, isRunning ? 75 : 60, Time.deltaTime * 10f);
     }
 
     void Look()
@@ -88,35 +133,32 @@ public class PlayerController : MonoBehaviour
 
     void RaycastCheck()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        // Create a ray from the camera's position and forward direction
+        Ray ray = new Ray(cam.transform.position, cam.transform.forward);
+
+        // Store information about what the ray hit
+        RaycastHit hit;
+
+        // Check if the ray hit something
+        if (Physics.Raycast(ray, out hit, raycastDist))
         {
-            // Create a ray from the camera's position and forward direction
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+            // Log the name of the object hit
+            Debug.Log("Hit object: " + hit.collider.name);
 
-            // Store information about what the ray hit
-            RaycastHit hit;
-
-            // Check if the ray hit something
-            if (Physics.Raycast(ray, out hit, raycastDist))
+            //// Optionally, apply logic to the hit object
+            if (hit.collider.CompareTag("Pickable") && !haveItem)
             {
-                // Log the name of the object hit
-                Debug.Log("Hit object: " + hit.collider.name);
-
-                //// Optionally, apply logic to the hit object
-                if (hit.collider.CompareTag("Pickable") && !haveItem)
-                {
-                    Debug.Log("Interacted with: " + hit.collider.name);
-                    Pickup(hit.collider.gameObject);
-                }
-
-                // Draw a debug ray in the editor for visualization
-                Debug.DrawRay(ray.origin, ray.direction * raycastDist, Color.green, 1f);
+                Debug.Log("Interacted with: " + hit.collider.name);
+                Pickup(hit.collider.gameObject);
             }
-            else
-            {
-                Debug.DrawRay(ray.origin, ray.direction * raycastDist, Color.red, 1f);
-                Debug.Log("No hit detected.");
-            }
+
+            // Draw a debug ray in the editor for visualization
+            Debug.DrawRay(ray.origin, ray.direction * raycastDist, Color.green, 1f);
+        }
+        else
+        {
+            Debug.DrawRay(ray.origin, ray.direction * raycastDist, Color.red, 1f);
+            Debug.Log("No hit detected.");
         }
     }
 
@@ -128,12 +170,27 @@ public class PlayerController : MonoBehaviour
         obj.transform.localRotation = Quaternion.identity;
     }
 
+    void UseItem()
+    {
+        //item.GetComponentInChildren<>();
+    }
+
     void Drop()
     {
-        if (haveItem && Input.GetKeyDown(KeyCode.Q)) 
+        item.DetachChildren();
+        haveItem = false;
+    }
+
+    void RegenStamina()
+    {
+        if (!isRunning && currentStamina < maxStamina)
         {
-            item.DetachChildren();
-            haveItem = false;
+            staminaRegenTimer += Time.deltaTime;
+            if (staminaRegenTimer >= staminaRegenDelay)
+            {
+                currentStamina += staminaRegenRate * Time.deltaTime;
+                currentStamina = Mathf.Clamp(currentStamina, 0, maxStamina);
+            }
         }
     }
 }
