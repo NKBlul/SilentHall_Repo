@@ -2,17 +2,25 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("References: ")]
     [SerializeField] Rigidbody rb;
     [SerializeField] Camera cam;
 
+    [Header("Movement: ")]
     [SerializeField] Vector3 move;
     public float walkingSpeed = 3f;
     public float runningSpeed = 5f;
 
+    [Header("Look: ")]
     [SerializeField] Vector2 look;
     public float sensitivity = 2f;
     public float verticalRotationLimit = 80f;  // Limit vertical look to prevent flipping
     private float rotationX = 0f;  // Vertical rotation tracker
+
+    [Header("Raycast: ")]
+    [SerializeField] Transform item;
+    [SerializeField] float raycastDist = 7f;
+    bool haveItem = false;
 
     void Start()
     {
@@ -23,6 +31,8 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         GetInput();
+        RaycastCheck();
+        Drop();
     }
 
     private void FixedUpdate()
@@ -74,5 +84,56 @@ public class PlayerController : MonoBehaviour
         rotationX -= look.y;  // Invert the Y-axis to make the camera look up when moving mouse up
         rotationX = Mathf.Clamp(rotationX, -verticalRotationLimit, verticalRotationLimit);  // Clamp the vertical rotation to avoid flipping the camera
         cam.transform.localRotation = Quaternion.Euler(rotationX, 0f, 0f);  // Apply the vertical look to the camera's local rotation
+    }
+
+    void RaycastCheck()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            // Create a ray from the camera's position and forward direction
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+
+            // Store information about what the ray hit
+            RaycastHit hit;
+
+            // Check if the ray hit something
+            if (Physics.Raycast(ray, out hit, raycastDist))
+            {
+                // Log the name of the object hit
+                Debug.Log("Hit object: " + hit.collider.name);
+
+                //// Optionally, apply logic to the hit object
+                if (hit.collider.CompareTag("Pickable") && !haveItem)
+                {
+                    Debug.Log("Interacted with: " + hit.collider.name);
+                    Pickup(hit.collider.gameObject);
+                }
+
+                // Draw a debug ray in the editor for visualization
+                Debug.DrawRay(ray.origin, ray.direction * raycastDist, Color.green, 1f);
+            }
+            else
+            {
+                Debug.DrawRay(ray.origin, ray.direction * raycastDist, Color.red, 1f);
+                Debug.Log("No hit detected.");
+            }
+        }
+    }
+
+    void Pickup(GameObject obj)
+    {
+        haveItem = true;
+        obj.transform.SetParent(item);
+        obj.transform.localPosition = Vector3.zero;
+        obj.transform.localRotation = Quaternion.identity;
+    }
+
+    void Drop()
+    {
+        if (haveItem && Input.GetKeyDown(KeyCode.Q)) 
+        {
+            item.DetachChildren();
+            haveItem = false;
+        }
     }
 }
