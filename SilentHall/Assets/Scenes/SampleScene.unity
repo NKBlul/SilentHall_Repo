@@ -588,7 +588,7 @@ GameObject:
   m_Component:
   - component: {fileID: 994479136}
   - component: {fileID: 994479135}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Post Process Volume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -732,26 +732,6 @@ PrefabInstance:
     - target: {fileID: 1363658324608856690, guid: f547225a39f965b40825b42312e902c9, type: 3}
       propertyPath: m_Name
       value: Flashlight
-      objectReference: {fileID: 0}
-    - target: {fileID: 2518106707544873041, guid: f547225a39f965b40825b42312e902c9, type: 3}
-      propertyPath: m_Range
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 2518106707544873041, guid: f547225a39f965b40825b42312e902c9, type: 3}
-      propertyPath: m_Color.g
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 2518106707544873041, guid: f547225a39f965b40825b42312e902c9, type: 3}
-      propertyPath: m_Color.r
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 2518106707544873041, guid: f547225a39f965b40825b42312e902c9, type: 3}
-      propertyPath: m_Intensity
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2518106707544873041, guid: f547225a39f965b40825b42312e902c9, type: 3}
-      propertyPath: m_SpotAngle
-      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 6585166169213236926, guid: f547225a39f965b40825b42312e902c9, type: 3}
       propertyPath: m_LocalPosition.x
