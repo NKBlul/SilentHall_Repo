@@ -166,6 +166,7 @@ public class PlayerController : MonoBehaviour
     {
         haveItem = true;
         obj.transform.SetParent(item);
+        obj.GetComponent<Rigidbody>().isKinematic = true;
         obj.transform.localPosition = Vector3.zero;
         obj.transform.localRotation = Quaternion.identity;
     }
@@ -177,6 +178,8 @@ public class PlayerController : MonoBehaviour
 
     void Drop()
     {
+        //item.GetChild(0).GetComponent<Rigidbody>().isKinematic = false;
+        item.GetComponentInChildren<Rigidbody>().isKinematic = false;
         item.DetachChildren();
         haveItem = false;
     }
