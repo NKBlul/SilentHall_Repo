@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6585166169213236926}
   - component: {fileID: 5279368821259632000}
   - component: {fileID: 9223364678482430473}
+  - component: {fileID: 1571678090440694285}
   m_Layer: 0
   m_Name: Flashlight
   m_TagString: Pickable
@@ -83,6 +84,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1571678090440694285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363658324608856690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fda1485f80286243a843382858e81e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spotLight: {fileID: 2518106707544873041}
 --- !u!1 &6293397844739742569
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,6 +160,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 76a1734c02c003549b1c76bb537e5c50, type: 2}
+  - {fileID: 2100000, guid: 8c7dfd07756d67e459926b569e6a923d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -227,7 +242,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7325320323783122134}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0

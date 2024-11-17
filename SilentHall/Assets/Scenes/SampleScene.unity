@@ -733,6 +733,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flashlight
       objectReference: {fileID: 0}
+    - target: {fileID: 2369007056587133211, guid: f547225a39f965b40825b42312e902c9, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 76a1734c02c003549b1c76bb537e5c50, type: 2}
+    - target: {fileID: 2369007056587133211, guid: f547225a39f965b40825b42312e902c9, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8c7dfd07756d67e459926b569e6a923d, type: 2}
     - target: {fileID: 6585166169213236926, guid: f547225a39f965b40825b42312e902c9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.961

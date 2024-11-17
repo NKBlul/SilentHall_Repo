@@ -173,7 +173,7 @@ public class PlayerController : MonoBehaviour
 
     void UseItem()
     {
-        //item.GetComponentInChildren<>();
+        item.GetComponentInChildren<IUseable>().Use();
     }
 
     void Drop()
