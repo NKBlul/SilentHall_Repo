@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
     [Header("Raycast: ")]
     [SerializeField] Transform item;
     [SerializeField] float raycastDist = 7f;
+    [SerializeField] LayerMask interactableLayer;
     bool haveItem = false;
 
     void Start()
@@ -41,12 +42,12 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         GetInput();
-
+        CastRayCast();
         if (Input.GetKeyDown(KeyCode.E))
         {
             if (!haveItem)
             {
-                RaycastCheck();
+                //RaycastCheck();
             }
             else
             {
@@ -165,6 +166,18 @@ public class PlayerController : MonoBehaviour
             Debug.DrawRay(ray.origin, ray.direction * raycastDist, Color.red, 1f);
             Debug.Log("No hit detected.");
         }
+    }
+
+    void CastRayCast()
+    {
+        Ray ray = new Ray(cam.transform.position, cam.transform.forward);
+        //RaycastHit hit;
+        //if (Physics.Raycast(ray, out RaycastHit hit, raycastDist, interactableLayer))
+        //{
+        //    
+        //}
+
+        Debug.DrawRay(ray.origin, ray.direction * raycastDist, Color.green);
     }
 
     void Pickup(GameObject obj)
