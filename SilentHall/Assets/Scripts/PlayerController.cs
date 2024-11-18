@@ -92,14 +92,18 @@ public class PlayerController : MonoBehaviour
         Vector3 desiredMoveDirection = forward * move.z + right * move.x;
 
         // Apply movement speed
-        if (Input.GetKey(KeyCode.LeftShift) && currentStamina > 0)
+        if (Input.GetKey(KeyCode.LeftShift))
         {
-            isRunning = true;
-            currentStamina -= staminaDrainRate * Time.fixedDeltaTime;
-            currentStamina = Mathf.Clamp(currentStamina, 0, maxStamina);
-            //rb.velocity = desiredMoveDirection * runningSpeed;
-            rb.MovePosition(rb.position + desiredMoveDirection * runningSpeed * Time.fixedDeltaTime);
-            staminaRegenTimer = 0f;
+            if (currentStamina > 0 && (rb.velocity.x > 0 || rb.velocity.z > 0))
+            {
+                isRunning = true;
+                currentStamina -= staminaDrainRate * Time.fixedDeltaTime;
+                currentStamina = Mathf.Clamp(currentStamina, 0, maxStamina);
+                //rb.velocity = desiredMoveDirection * runningSpeed;
+                rb.MovePosition(rb.position + desiredMoveDirection * runningSpeed * Time.fixedDeltaTime);
+                staminaRegenTimer = 0f;
+                Debug.Log($"Current Stamina: {currentStamina}");
+            }          
         }
         else if (currentStamina <= 0) // Stamina depleted
         {
@@ -116,7 +120,6 @@ public class PlayerController : MonoBehaviour
             //rb.velocity = desiredMoveDirection * walkingSpeed;
             rb.MovePosition(rb.position + desiredMoveDirection * walkingSpeed * Time.fixedDeltaTime);
         }
-        Debug.Log($"Current Stamina: {currentStamina}");
         cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, isRunning ? 75 : 60, Time.deltaTime * 10f);
     }
 
@@ -150,6 +153,11 @@ public class PlayerController : MonoBehaviour
             {
                 Debug.Log("Interacted with: " + hit.collider.name);
                 Pickup(hit.collider.gameObject);
+            }
+            if (hit.collider.CompareTag("Interactable"))
+            {
+                Debug.Log("Interacted with: " + hit.collider.name);
+                hit.collider.gameObject.GetComponent<IInteractable>().OnInteract();
             }
 
             // Draw a debug ray in the editor for visualization
@@ -194,6 +202,7 @@ public class PlayerController : MonoBehaviour
                 currentStamina += staminaRegenRate * Time.deltaTime;
                 currentStamina = Mathf.Clamp(currentStamina, 0, maxStamina);
             }
+            Debug.Log($"Current Stamina: {currentStamina}");
         }
     }
 }
