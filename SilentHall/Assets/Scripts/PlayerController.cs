@@ -92,18 +92,15 @@ public class PlayerController : MonoBehaviour
         Vector3 desiredMoveDirection = forward * move.z + right * move.x;
 
         // Apply movement speed
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift) && currentStamina > 0)
         {
-            if (currentStamina > 0 && (rb.velocity.x > 0 || rb.velocity.z > 0))
-            {
-                isRunning = true;
-                currentStamina -= staminaDrainRate * Time.fixedDeltaTime;
-                currentStamina = Mathf.Clamp(currentStamina, 0, maxStamina);
-                //rb.velocity = desiredMoveDirection * runningSpeed;
-                rb.MovePosition(rb.position + desiredMoveDirection * runningSpeed * Time.fixedDeltaTime);
-                staminaRegenTimer = 0f;
-                Debug.Log($"Current Stamina: {currentStamina}");
-            }          
+            isRunning = true;
+            currentStamina -= staminaDrainRate * Time.fixedDeltaTime;
+            currentStamina = Mathf.Clamp(currentStamina, 0, maxStamina);
+            //rb.velocity = desiredMoveDirection * runningSpeed;
+            rb.MovePosition(rb.position + desiredMoveDirection * runningSpeed * Time.fixedDeltaTime);
+            staminaRegenTimer = 0f;
+            Debug.Log($"Current Stamina: {currentStamina}");
         }
         else if (currentStamina <= 0) // Stamina depleted
         {
