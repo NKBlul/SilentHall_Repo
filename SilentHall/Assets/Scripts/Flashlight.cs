@@ -1,20 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 
-public class Flashlight : MonoBehaviour, IUseable
+public class Flashlight : MonoBehaviour, IUseable, IInteractable
 {
     [SerializeField] Light spotLight;
     bool isOn;
 
-    void Start()
+    public string GetInteractionPrompt()
     {
-        
+        return $"Press [E] to pick-up";
     }
 
-    void Update()
+
+    public void OnInteract()
     {
-        
+        PlayerController player = FindObjectOfType<PlayerController>(); // Find the player controller
+        if (player != null)
+        {
+            player.Pickup(gameObject); // Call the Pickup method on the player and pass the flashlight as the object to pick up
+            GetComponent<Rigidbody>().isKinematic = true;
+            transform.localPosition = Vector3.zero;
+            transform.localRotation = Quaternion.identity;
+            //gameObject.layer = default;
+            gameObject.layer = LayerMask.NameToLayer("Default");
+        }
     }
 
     public void Use()

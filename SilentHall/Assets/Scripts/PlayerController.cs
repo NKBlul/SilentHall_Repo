@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float raycastDist = 7f;
     [SerializeField] LayerMask interactableLayer;
     bool haveItem = false;
+    private IInteractable currentInteractable; // Cache the last interactable object
 
     void Start()
     {
@@ -44,17 +45,13 @@ public class PlayerController : MonoBehaviour
     {
         GetInput();
         CastRayCast();
-        //if (Input.GetKeyDown(KeyCode.E))
-        //{
-        //    if (!haveItem)
-        //    {
-        //        //RaycastCheck();
-        //    }
-        //    else
-        //    {
-        //        UseItem();
-        //    }
-        //}
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (currentInteractable != null)
+            {
+                currentInteractable.OnInteract();
+            }
+        }
         if (Input.GetKeyDown(KeyCode.F) && haveItem)
         {
             UseItem();
@@ -136,70 +133,41 @@ public class PlayerController : MonoBehaviour
         cam.transform.localRotation = Quaternion.Euler(rotationX, 0f, 0f);  // Apply the vertical look to the camera's local rotation
     }
 
-    /*void RaycastCheck()
-    {
-        // Create a ray from the camera's position and forward direction
-        Ray ray = new Ray(cam.transform.position, cam.transform.forward);
-
-        // Store information about what the ray hit
-        RaycastHit hit;
-
-        // Check if the ray hit something
-        if (Physics.Raycast(ray, out hit, raycastDist))
-        {
-            // Log the name of the object hit
-            Debug.Log("Hit object: " + hit.collider.name);
-
-            //// Optionally, apply logic to the hit object
-            if (hit.collider.CompareTag("Pickable") && !haveItem)
-            {
-                Debug.Log("Interacted with: " + hit.collider.name);
-                Pickup(hit.collider.gameObject);
-            }
-            if (hit.collider.CompareTag("Interactable"))
-            {
-                Debug.Log("Interacted with: " + hit.collider.name);
-                hit.collider.gameObject.GetComponent<IInteractable>().OnInteract();
-            }
-
-            // Draw a debug ray in the editor for visualization
-            Debug.DrawRay(ray.origin, ray.direction * raycastDist, Color.green, 1f);
-        }
-        else
-        {
-            Debug.DrawRay(ray.origin, ray.direction * raycastDist, Color.red, 1f);
-            Debug.Log("No hit detected.");
-        }
-    }*/
-
     void CastRayCast()
     {
         Ray ray = new Ray(cam.transform.position, cam.transform.forward);
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, raycastDist))
+        if (Physics.Raycast(ray, out hit, raycastDist, interactableLayer))
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            IInteractable interactable = hit.collider.GetComponent<IInteractable>();
+
+            if (interactable != null)
             {
-                if (hit.collider.gameObject.CompareTag("Interactable"))
+                if (interactable != currentInteractable)
                 {
-                    hit.collider.gameObject.GetComponent<IInteractable>().OnInteract();
+                    currentInteractable = interactable; // Update the cached interactable
+                    UIManager.instance.ChangeText(UIManager.instance.interactableText, interactable.GetInteractionPrompt());
                 }
-                if (hit.collider.gameObject.CompareTag("Pickable"))
-                {
-                    Pickup(hit.collider.gameObject);
-                }
+                return;
             }
         }
-        Debug.DrawRay(ray.origin, ray.direction * raycastDist, Color.green);
+
+        if (currentInteractable != null)
+        {
+            currentInteractable = null;
+            UIManager.instance.ClearText(UIManager.instance.interactableText);
+        }
+
+        Debug.DrawRay(ray.origin, ray.direction * raycastDist, Color.green, 1f);
     }
 
-    void Pickup(GameObject obj)
+    public void Pickup(GameObject obj)
     {
         haveItem = true;
         obj.transform.SetParent(item);
-        obj.GetComponent<Rigidbody>().isKinematic = true;
-        obj.transform.localPosition = Vector3.zero;
-        obj.transform.localRotation = Quaternion.identity;
+
+        currentInteractable = null;
+        UIManager.instance.ClearText(UIManager.instance.interactableText);
     }
 
     void UseItem()
@@ -209,7 +177,8 @@ public class PlayerController : MonoBehaviour
 
     void Drop()
     {
-        //item.GetChild(0).GetComponent<Rigidbody>().isKinematic = false;
+        item.GetChild(0).gameObject.layer = LayerMask.NameToLayer("Interactable");
+        Debug.Log($"{item.name}, {item.gameObject.layer}, {interactableLayer.value}");
         item.GetComponentInChildren<Rigidbody>().isKinematic = false;
         item.DetachChildren();
         haveItem = false;
