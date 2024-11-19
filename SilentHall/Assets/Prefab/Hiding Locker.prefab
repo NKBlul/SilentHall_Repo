@@ -426,9 +426,10 @@ GameObject:
   - component: {fileID: 389380446225807525}
   - component: {fileID: 4428939176752198959}
   - component: {fileID: 406253997664886106}
+  - component: {fileID: 1173215834016839064}
   m_Layer: 9
   m_Name: Hiding Locker
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -494,6 +495,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 4428939176752198959}
+--- !u!65 &1173215834016839064
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4639500273059437317}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 2.5, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5196537117985936280
 GameObject:
   m_ObjectHideFlags: 0
@@ -505,6 +527,7 @@ GameObject:
   - component: {fileID: 7817498686771939963}
   - component: {fileID: 2833791829637022214}
   - component: {fileID: 3043811528467710299}
+  - component: {fileID: 1981848611367824849}
   m_Layer: 9
   m_Name: polySurface1
   m_TagString: Untagged
@@ -577,6 +600,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1981848611367824849
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5196537117985936280}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.5650175, y: 2.2486014, z: 0.09259607}
+  m_Center: {x: -0.5861845, y: -0.0000007748604, z: 0.23557636}
 --- !u!1 &6977064539155210535
 GameObject:
   m_ObjectHideFlags: 0
@@ -671,6 +715,7 @@ GameObject:
   - component: {fileID: 8290319117734636676}
   - component: {fileID: 6921696192989767502}
   - component: {fileID: 5785323374515722676}
+  - component: {fileID: 4970529996881418719}
   m_Layer: 9
   m_Name: polySurface7
   m_TagString: Untagged
@@ -743,6 +788,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4970529996881418719
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7122645470800436569}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.6148397, y: 2.3514884, z: 0.6476793}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7579387048764640189
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using Palmmedia.ReportGenerator.Core.CodeAnalysis;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -43,18 +44,21 @@ public class PlayerController : MonoBehaviour
     {
         GetInput();
         CastRayCast();
-        if (Input.GetKeyDown(KeyCode.E))
+        //if (Input.GetKeyDown(KeyCode.E))
+        //{
+        //    if (!haveItem)
+        //    {
+        //        //RaycastCheck();
+        //    }
+        //    else
+        //    {
+        //        UseItem();
+        //    }
+        //}
+        if (Input.GetKeyDown(KeyCode.F) && haveItem)
         {
-            if (!haveItem)
-            {
-                //RaycastCheck();
-            }
-            else
-            {
-                UseItem();
-            }
+            UseItem();
         }
-
         if (Input.GetKeyDown(KeyCode.Q) && haveItem)
         {
             Drop();
@@ -132,7 +136,7 @@ public class PlayerController : MonoBehaviour
         cam.transform.localRotation = Quaternion.Euler(rotationX, 0f, 0f);  // Apply the vertical look to the camera's local rotation
     }
 
-    void RaycastCheck()
+    /*void RaycastCheck()
     {
         // Create a ray from the camera's position and forward direction
         Ray ray = new Ray(cam.transform.position, cam.transform.forward);
@@ -166,17 +170,26 @@ public class PlayerController : MonoBehaviour
             Debug.DrawRay(ray.origin, ray.direction * raycastDist, Color.red, 1f);
             Debug.Log("No hit detected.");
         }
-    }
+    }*/
 
     void CastRayCast()
     {
         Ray ray = new Ray(cam.transform.position, cam.transform.forward);
-        //RaycastHit hit;
-        //if (Physics.Raycast(ray, out RaycastHit hit, raycastDist, interactableLayer))
-        //{
-        //    
-        //}
-
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, raycastDist))
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                if (hit.collider.gameObject.CompareTag("Interactable"))
+                {
+                    hit.collider.gameObject.GetComponent<IInteractable>().OnInteract();
+                }
+                if (hit.collider.gameObject.CompareTag("Pickable"))
+                {
+                    Pickup(hit.collider.gameObject);
+                }
+            }
+        }
         Debug.DrawRay(ray.origin, ray.direction * raycastDist, Color.green);
     }
 
