@@ -178,7 +178,6 @@ public class PlayerController : MonoBehaviour
     void Drop()
     {
         item.GetChild(0).gameObject.layer = LayerMask.NameToLayer("Interactable");
-        Debug.Log($"{item.name}, {item.gameObject.layer}, {interactableLayer.value}");
         item.GetComponentInChildren<Rigidbody>().isKinematic = false;
         item.DetachChildren();
         haveItem = false;

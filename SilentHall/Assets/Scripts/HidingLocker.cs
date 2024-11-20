@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class HidingLocker : BaseLocker, IInteractable
 {
+    [SerializeField] Transform hidingSpot;
+
     public string GetInteractionPrompt()
     {
         return $"Press [E] to hide";
     }
-
 
     public void OnInteract()
     {
