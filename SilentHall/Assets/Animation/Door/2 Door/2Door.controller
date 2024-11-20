@@ -1,13 +1,13 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1102 &-4900644446027585655
+--- !u!1102 &-3023649484162327750
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Door_Close
+  m_Name: Door_Default
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -20,7 +20,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: e7cb2c54647a780488df8dccdb913e95, type: 2}
+  m_Motion: {fileID: 7400000, guid: cd58dfb9d55203545adda622e33f11bb, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -36,14 +36,14 @@ AnimatorStateMachine:
   m_Name: Base Layer
   m_ChildStates:
   - serializedVersion: 1
-    m_State: {fileID: 8759680514029187280}
-    m_Position: {x: 485.89746, y: 204.10258, z: 0}
+    m_State: {fileID: 7054412718146032529}
+    m_Position: {x: 125.64105, y: 206.66667, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: -4900644446027585655}
-    m_Position: {x: 293.58978, y: 245.12822, z: 0}
+    m_State: {fileID: -3023649484162327750}
+    m_Position: {x: 288.46155, y: 147.6923, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 1562048221812166981}
-    m_Position: {x: 382.05133, y: 173.33333, z: 0}
+    m_State: {fileID: 8957085712870450341}
+    m_Position: {x: 350, y: 230, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -53,7 +53,7 @@ AnimatorStateMachine:
   m_EntryPosition: {x: 50, y: 120, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: 8759680514029187280}
+  m_DefaultState: {fileID: 7054412718146032529}
 --- !u!91 &9100000
 AnimatorController:
   m_ObjectHideFlags: 0
@@ -76,7 +76,7 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
---- !u!1102 &1562048221812166981
+--- !u!1102 &7054412718146032529
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
@@ -102,14 +102,14 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &8759680514029187280
+--- !u!1102 &8957085712870450341
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Door_Default
+  m_Name: Door_Close
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -122,7 +122,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: cd58dfb9d55203545adda622e33f11bb, type: 2}
+  m_Motion: {fileID: 7400000, guid: e7cb2c54647a780488df8dccdb913e95, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

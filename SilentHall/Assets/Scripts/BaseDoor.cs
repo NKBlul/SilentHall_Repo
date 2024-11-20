@@ -16,6 +16,6 @@ public class BaseDoor : MonoBehaviour
 
     void Start()
     {
-        animator.Play(DoorAnimationState.Door_Default.ToString());
+        animator.Play(DoorAnimationState.Door_Open.ToString());
     }
 }

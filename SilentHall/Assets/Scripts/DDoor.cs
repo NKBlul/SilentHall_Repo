@@ -16,6 +16,7 @@ public class DDoor : BaseDoor, IInteractable
 
     public void OnInteract()
     {
+        Debug.Log("HELO");
         if (!isOpen)
         {
             animator.Play(DoorAnimationState.Door_Open.ToString());
