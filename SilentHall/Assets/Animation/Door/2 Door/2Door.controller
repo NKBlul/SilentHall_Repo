@@ -1,13 +1,13 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1102 &-7170908300494807492
+--- !u!1102 &-4900644446027585655
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Locker_Open
+  m_Name: Door_Close
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -20,35 +20,13 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 6757470042131456393, guid: e62df08d1ed845f40b99f17ec6ec10b5, type: 3}
+  m_Motion: {fileID: 7400000, guid: e7cb2c54647a780488df8dccdb913e95, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!91 &9100000
-AnimatorController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Locker2
-  serializedVersion: 5
-  m_AnimatorParameters: []
-  m_AnimatorLayers:
-  - serializedVersion: 5
-    m_Name: Base Layer
-    m_StateMachine: {fileID: 4331705670858076063}
-    m_Mask: {fileID: 0}
-    m_Motions: []
-    m_Behaviours: []
-    m_BlendingMode: 0
-    m_SyncedLayerIndex: -1
-    m_DefaultWeight: 0
-    m_IKPass: 0
-    m_SyncedLayerAffectsTiming: 0
-    m_Controller: {fileID: 9100000}
---- !u!1107 &4331705670858076063
+--- !u!1107 &-1765702770001941228
 AnimatorStateMachine:
   serializedVersion: 6
   m_ObjectHideFlags: 1
@@ -58,14 +36,14 @@ AnimatorStateMachine:
   m_Name: Base Layer
   m_ChildStates:
   - serializedVersion: 1
-    m_State: {fileID: 7871312189536822493}
-    m_Position: {x: 40, y: 260, z: 0}
+    m_State: {fileID: 8759680514029187280}
+    m_Position: {x: 485.89746, y: 204.10258, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 6258562212793978984}
-    m_Position: {x: 374, y: 196, z: 0}
+    m_State: {fileID: -4900644446027585655}
+    m_Position: {x: 293.58978, y: 245.12822, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: -7170908300494807492}
-    m_Position: {x: 424, y: 316, z: 0}
+    m_State: {fileID: 1562048221812166981}
+    m_Position: {x: 382.05133, y: 173.33333, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -75,15 +53,37 @@ AnimatorStateMachine:
   m_EntryPosition: {x: 50, y: 120, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: 7871312189536822493}
---- !u!1102 &6258562212793978984
+  m_DefaultState: {fileID: 8759680514029187280}
+--- !u!91 &9100000
+AnimatorController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 2Door
+  serializedVersion: 5
+  m_AnimatorParameters: []
+  m_AnimatorLayers:
+  - serializedVersion: 5
+    m_Name: Base Layer
+    m_StateMachine: {fileID: -1765702770001941228}
+    m_Mask: {fileID: 0}
+    m_Motions: []
+    m_Behaviours: []
+    m_BlendingMode: 0
+    m_SyncedLayerIndex: -1
+    m_DefaultWeight: 0
+    m_IKPass: 0
+    m_SyncedLayerAffectsTiming: 0
+    m_Controller: {fileID: 9100000}
+--- !u!1102 &1562048221812166981
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Locker_Close
+  m_Name: Door_Open
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -96,20 +96,20 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -3171175897101422790, guid: e62df08d1ed845f40b99f17ec6ec10b5, type: 3}
+  m_Motion: {fileID: 7400000, guid: 3e9ee96cf06fdbe47820019f5f400e5a, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &7871312189536822493
+--- !u!1102 &8759680514029187280
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Locker_Default
+  m_Name: Door_Default
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -122,7 +122,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 2388425159603180977, guid: e62df08d1ed845f40b99f17ec6ec10b5, type: 3}
+  m_Motion: {fileID: 7400000, guid: cd58dfb9d55203545adda622e33f11bb, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
