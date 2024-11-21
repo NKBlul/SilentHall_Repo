@@ -2,8 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DDoor : BaseDoor, IInteractable
+public class DDoor : MonoBehaviour, IInteractable
 {
+    [SerializeField] Transform leftDoor;
+    [SerializeField] Transform rightDoor;
+    [SerializeField] float rotationSpeed = 2f; // Speed of rotation
+    [SerializeField] Vector3 openLeftRotation = new Vector3(0, 90, 0); // Target rotation when open
+    [SerializeField] Vector3 openRightRotation = new Vector3(0, -90, 0); // Target rotation when open
+    [SerializeField] Vector3 closedRotation = new Vector3(0, 0, 0); // Target rotation when closed
+    private Coroutine doorCoroutine;
+    bool isOpen = false;
+
     public string GetInteractionPrompt()
     {
         if (!isOpen)
@@ -16,16 +25,37 @@ public class DDoor : BaseDoor, IInteractable
 
     public void OnInteract()
     {
-        Debug.Log("HELO");
-        if (!isOpen)
+        if (doorCoroutine != null) StopCoroutine(doorCoroutine);
+
+        if (isOpen)
         {
-            animator.Play(DoorAnimationState.Door_Open.ToString());
-            isOpen = true;
+            doorCoroutine = StartCoroutine(RotateDoor(closedRotation, closedRotation));
         }
         else
         {
-            animator.Play(DoorAnimationState.Door_Close.ToString());
-            isOpen = false;
+            doorCoroutine = StartCoroutine(RotateDoor(openLeftRotation, openRightRotation));
         }
+
+        isOpen = !isOpen;
+    }
+
+    IEnumerator RotateDoor(Vector3 targetRotation1, Vector3 targetRotation2)
+    {
+        Quaternion startLeftRotation = leftDoor.localRotation;
+        Quaternion startRightRotation = rightDoor.localRotation;
+        Quaternion endRotation1 = Quaternion.Euler(targetRotation1);
+        Quaternion endRotation2 = Quaternion.Euler(targetRotation2);
+
+        float time = 0f;
+        while (time < 1f)
+        {
+            time += Time.deltaTime * rotationSpeed;
+            leftDoor.localRotation = Quaternion.Lerp(startLeftRotation, endRotation1, time);
+            rightDoor.localRotation = Quaternion.Lerp(startRightRotation, endRotation2, time);
+            yield return null;
+        }
+
+        leftDoor.localRotation = endRotation1; // Snap to exact final rotation
+        rightDoor.localRotation = endRotation2; // Snap to exact final rotation
     }
 }
