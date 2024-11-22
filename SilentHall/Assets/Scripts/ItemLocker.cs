@@ -4,7 +4,11 @@ public class ItemLocker : BaseLocker, IInteractable
 {
     public string GetInteractionPrompt()
     {
-        return $"Press [E] to open";
+        if (!isOpen)
+        {
+            return $"Press [E] to open";
+        }
+        return "";
     }
 
 
