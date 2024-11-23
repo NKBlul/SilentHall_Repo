@@ -29,7 +29,9 @@ public class PlayerController : MonoBehaviour
 
     [Header("Raycast: ")]
     [SerializeField] Transform item;
-    [SerializeField] float raycastDist = 7f;
+    [SerializeField] float raycastDist = 5f;
+    private float raycastTimer = 0f;
+    private const float raycastInterval = 0.15f; // Raycast interval
     [SerializeField] LayerMask interactableLayer;
     bool haveItem = false;
     private IInteractable currentInteractable; // Cache the last interactable object
@@ -44,7 +46,12 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         GetInput();
-        CastRayCast();
+        raycastTimer += Time.deltaTime;
+        if (raycastTimer >= raycastInterval)
+        {
+            CastRayCast();
+            raycastTimer = 0f;
+        }
         if (Input.GetKeyDown(KeyCode.E))
         {
             if (currentInteractable != null)
