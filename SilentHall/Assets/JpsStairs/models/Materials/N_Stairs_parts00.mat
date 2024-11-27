@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: N_Stairs_parts00
-  m_Shader: {fileID: 4800000, guid: 6e8545690ef5ab744b4c7a9afe0e3cd8, type: 3}
+  m_Shader: {fileID: 4800000, guid: e592106791940a244ae6b5717038c606, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
