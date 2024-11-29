@@ -177,6 +177,7 @@ GameObject:
   - component: {fileID: 417654}
   - component: {fileID: 3317654}
   - component: {fileID: 2317654}
+  - component: {fileID: 7708434126093086042}
   m_Layer: 0
   m_Name: Sta_LowF_B_stairs_nig
   m_TagString: Untagged
@@ -249,6 +250,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7708434126093086042
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 117654}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300006, guid: e46162978dc95de4fa1f0f7c3f489f48, type: 3}
 --- !u!1 &117656
 GameObject:
   m_ObjectHideFlags: 0
@@ -667,6 +690,7 @@ GameObject:
   - component: {fileID: 417670}
   - component: {fileID: 3317662}
   - component: {fileID: 2317662}
+  - component: {fileID: 6055158532656532950}
   m_Layer: 0
   m_Name: Sta_LowF_B_wallB_nig
   m_TagString: Untagged
@@ -739,6 +763,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6055158532656532950
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 117670}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 7.761077, y: 0.22007146, z: 6.001778}
+  m_Center: {x: -0.30433464, y: 0.099498995, z: 2.9993896}
 --- !u!1 &117672
 GameObject:
   m_ObjectHideFlags: 0
@@ -1200,6 +1245,7 @@ GameObject:
   - component: {fileID: 417684}
   - component: {fileID: 3317674}
   - component: {fileID: 2317674}
+  - component: {fileID: 3578420789291392493}
   m_Layer: 0
   m_Name: Sta_LowF_B_wallF_nig
   m_TagString: Untagged
@@ -1272,6 +1318,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3578420789291392493
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 117684}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 7.7631483, y: 0.20675267, z: 6.000333}
+  m_Center: {x: -0.30433476, y: -0.10311518, z: 3.000114}
 --- !u!1 &117686
 GameObject:
   m_ObjectHideFlags: 0
@@ -1401,6 +1468,7 @@ GameObject:
   - component: {fileID: 417690}
   - component: {fileID: 3317678}
   - component: {fileID: 2317678}
+  - component: {fileID: 4034974354050082143}
   m_Layer: 0
   m_Name: Sta_LowF_B_window_nig
   m_TagString: Untagged
@@ -1473,3 +1541,25 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &4034974354050082143
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 117690}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300020, guid: e46162978dc95de4fa1f0f7c3f489f48, type: 3}
