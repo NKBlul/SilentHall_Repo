@@ -7,3 +7,6 @@ Rusty Locker: "Rusty Locker" (https://skfb.ly/oJswK) by D3rpmaster is licensed u
 School stair: https://assetstore.unity.com/packages/3d/props/interior/stairs-of-the-japanese-school-model-76668
 Font: https://www.dafont.com/ghastly-panic.font
 Piano: "Grand Piano" (https://skfb.ly/oGR77) by siparmin is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+Skeleton: "Skeleton" (https://skfb.ly/SnDY) by Diego Luján García is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+Ecorche: "Male Full Body Ecorche" (https://skfb.ly/KFyA) by Diego Luján García is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+Santa muerte: "Santa Muerte & Requiem for the Sketchfab" (https://skfb.ly/prVXB) by Mateusz Woliński is licensed under Creative Commons Attribution-ShareAlike (http://creativecommons.org/licenses/by-sa/4.0/).
