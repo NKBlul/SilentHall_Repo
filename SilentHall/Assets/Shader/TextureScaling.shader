@@ -1,5 +1,3 @@
-// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
-
 Shader "Unlit/TextureScaling"
 {
     Properties
@@ -16,25 +14,31 @@ Shader "Unlit/TextureScaling"
 
         sampler2D _MainTex;
 
-    // Struct to hold input information
-    struct Input
-    {
-        float2 uv_MainTex;
-    };
+        struct Input
+        {
+            float2 uv_MainTex;
+        };
 
-    void surf(Input IN, inout SurfaceOutputStandard o)
-    {
-        // Get object scale from the model's transform
-        float scaleX = unity_ObjectToWorld[0][0]; // Scale in X (1st row)
-        float scaleZ = unity_ObjectToWorld[2][2]; // Scale in Z (3rd row)
+        // Function to calculate object scale from unity_ObjectToWorld matrix
+        float3 GetObjectScale()
+        {
+            float3 scaleX = unity_ObjectToWorld._m00_m10_m20; // First column
+            float3 scaleY = unity_ObjectToWorld._m01_m11_m21; // Second column
+            float3 scaleZ = unity_ObjectToWorld._m02_m12_m22; // Third column
 
-        // Modify the UVs based on the object scale
-        float2 scaledUV = IN.uv_MainTex * float2(scaleX, scaleZ);
+            return float3(length(scaleX), length(scaleY), length(scaleZ));
+        }
 
-        // Apply texture with modified UVs
-        o.Albedo = tex2D(_MainTex, scaledUV).rgb;
-    }
-    ENDCG
+        void surf(Input IN, inout SurfaceOutputStandard o)
+        {
+            float3 objectScale = GetObjectScale();
+
+            // Use X and Z scales for UV adjustment (assuming uniform scaling in Y isn't relevant)
+            float2 scaledUV = IN.uv_MainTex * float2(objectScale.x, objectScale.z);
+
+            o.Albedo = tex2D(_MainTex, scaledUV).rgb;
+        }
+        ENDCG
     }
         FallBack "Diffuse"
 }
