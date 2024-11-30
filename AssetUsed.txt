@@ -6,3 +6,4 @@ Rusty Locker: "Rusted Locker" (https://skfb.ly/oJsx8) by nkd3 is licensed under 
 Rusty Locker: "Rusty Locker" (https://skfb.ly/oJswK) by D3rpmaster is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 School stair: https://assetstore.unity.com/packages/3d/props/interior/stairs-of-the-japanese-school-model-76668
 Font: https://www.dafont.com/ghastly-panic.font
+Piano: "Grand Piano" (https://skfb.ly/oGR77) by siparmin is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
