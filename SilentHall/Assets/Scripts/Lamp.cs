@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Lamp : MonoBehaviour
 {
-    [SerializeField] Light light;
+    [SerializeField] Light lights;
     float minFlickerTime = 0.1f;
     float maxFlickerTime = 1.0f;
 
@@ -20,9 +20,9 @@ public class Lamp : MonoBehaviour
 
     IEnumerator FlickerLight()
     {
-        light.enabled = true;
+        lights.enabled = true;
         yield return new WaitForSeconds(Random.Range(minFlickerTime, maxFlickerTime));
-        light.enabled = false;
+        lights.enabled = false;
         yield return new WaitForSeconds(Random.Range(minFlickerTime, maxFlickerTime));
         StartCoroutine(FlickerLight());
     }

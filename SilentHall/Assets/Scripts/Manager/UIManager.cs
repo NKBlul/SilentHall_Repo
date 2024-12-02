@@ -1,13 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
 
     public TextMeshProUGUI interactableText;
+    public GameObject stamina;
+    public Image staminaBar;
 
     private void Awake()
     {
@@ -30,5 +31,16 @@ public class UIManager : MonoBehaviour
     public void ClearText(TextMeshProUGUI text)
     {
         text.text = "";
+    }
+
+    public void UpdateStaminaBar(float fill, float total)
+    {
+        ActivateStamina(true);
+        staminaBar.fillAmount = fill / total;
+    }
+
+    public void ActivateStamina(bool active)
+    {
+        stamina.SetActive(active);
     }
 }

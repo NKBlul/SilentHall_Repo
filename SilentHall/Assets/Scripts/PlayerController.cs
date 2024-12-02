@@ -41,6 +41,8 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         currentStamina = maxStamina;
+        UIManager.instance.UpdateStaminaBar(currentStamina, maxStamina);
+        UIManager.instance.ActivateStamina(false);
     }
 
     void Update()
@@ -106,10 +108,11 @@ public class PlayerController : MonoBehaviour
             isRunning = true;
             currentStamina -= staminaDrainRate * Time.fixedDeltaTime;
             currentStamina = Mathf.Clamp(currentStamina, 0, maxStamina);
+            UIManager.instance.UpdateStaminaBar(currentStamina, maxStamina);
             //rb.velocity = desiredMoveDirection * runningSpeed;
             rb.MovePosition(rb.position + desiredMoveDirection * runningSpeed * Time.fixedDeltaTime);
             staminaRegenTimer = 0f;
-            Debug.Log($"Current Stamina: {currentStamina}");
+            //Debug.Log($"Current Stamina: {currentStamina}");
         }
         else if (currentStamina <= 0) // Stamina depleted
         {
@@ -118,13 +121,14 @@ public class PlayerController : MonoBehaviour
             // Slow down to a crawl or stop entirely
             rb.MovePosition(rb.position + desiredMoveDirection * (walkingSpeed * 0.5f) * Time.fixedDeltaTime);
 
-            Debug.Log("Stamina depleted. Slowing down...");
+            //Debug.Log("Stamina depleted. Slowing down...");
         }
         else
         {
             isRunning = false;
             //rb.velocity = desiredMoveDirection * walkingSpeed;
             rb.MovePosition(rb.position + desiredMoveDirection * walkingSpeed * Time.fixedDeltaTime);
+            UIManager.instance.ActivateStamina(false);
         }
         cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, isRunning ? 75 : 60, Time.deltaTime * 10f);
     }
@@ -199,8 +203,8 @@ public class PlayerController : MonoBehaviour
             {
                 currentStamina += staminaRegenRate * Time.deltaTime;
                 currentStamina = Mathf.Clamp(currentStamina, 0, maxStamina);
+                UIManager.instance.UpdateStaminaBar(currentStamina, maxStamina);
             }
-            Debug.Log($"Current Stamina: {currentStamina}");
         }
     }
 }
