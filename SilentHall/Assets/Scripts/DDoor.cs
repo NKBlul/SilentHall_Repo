@@ -11,7 +11,7 @@ public class DDoor : MonoBehaviour, IInteractable
 
     float openSpeed = 2f;
     //bool isOpen = false;
-    bool isLocked = true;
+    [SerializeField] bool isLocked = true;
 
     public string GetInteractionPrompt()
     {
