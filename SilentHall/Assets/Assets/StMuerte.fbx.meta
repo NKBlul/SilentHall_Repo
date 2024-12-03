@@ -3,7 +3,52 @@ guid: 3e5865496de3b5a4f88e7233bf572df8
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CROSS_METAL
+    second: {fileID: 2100000, guid: d8e0c5aeb0b1aec4ea257c4925af877d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HaloRed
+    second: {fileID: 2100000, guid: dcb6b751eaf82f54291a97a246dee002, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HaloWhite
+    second: {fileID: 2100000, guid: 965a322314ed6dc45bc8f42236ce87e9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Robe
+    second: {fileID: 2100000, guid: 6c26776ef40e3e8498ed7c6d8d9d70c3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SkeletonBody
+    second: {fileID: 2100000, guid: 9c583a61d34c2b1449c0f6c1391edfdb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SkeletonLimb
+    second: {fileID: 2100000, guid: 662b81e91e66e1c41ac2e512b7bed627, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SkeletonSkull
+    second: {fileID: 2100000, guid: 0ddb1cd4abce21a468367f3c61e5162e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TWINE
+    second: {fileID: 2100000, guid: ce816f971d0555948b193c8887ade16c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WOOD
+    second: {fileID: 2100000, guid: a22524fef0030d54e8c55228c37e5a56, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -41,14 +86,14 @@ ModelImporter:
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
     importPhysicalCameras: 1
-    importVisibility: 1
+    importVisibility: 0
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     nodeNameCollisionStrategy: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
@@ -78,7 +123,7 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
-  importAnimation: 1
+  importAnimation: 0
   humanDescription:
     serializedVersion: 3
     human: []
@@ -97,7 +142,7 @@ ModelImporter:
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
