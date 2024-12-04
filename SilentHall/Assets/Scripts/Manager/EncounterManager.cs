@@ -7,6 +7,8 @@ public class EncounterManager : MonoBehaviour
 {
     public static EncounterManager instance;
 
+    [SerializeField] GameObject stMuerte1;
+
     private void Awake()
     {
         if (instance == null)
@@ -25,6 +27,7 @@ public class EncounterManager : MonoBehaviour
         switch (eventName) 
         {
             case "event 1":
+                stMuerte1.SetActive(false);
                 break;
             case "event 2":
                 break;
