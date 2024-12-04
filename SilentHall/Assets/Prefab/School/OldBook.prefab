@@ -94,6 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6204344931778526199}
   - component: {fileID: 1080560117333674747}
+  - component: {fileID: 4081750367119665199}
   m_Layer: 9
   m_Name: OldBook
   m_TagString: Untagged
@@ -138,3 +139,15 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.2743153, y: 0.0739568, z: 0.3677417}
   m_Center: {x: -0.13288563, y: 0.0326216, z: -0.18387085}
+--- !u!114 &4081750367119665199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2691814174464156857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2268aa14e75629f4aa0725629403f1ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

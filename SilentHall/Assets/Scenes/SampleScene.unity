@@ -8438,9 +8438,13 @@ MonoBehaviour:
   verticalRotationLimit: 80
   item: {fileID: 367924422}
   raycastDist: 1.5
+  raycastDist2: 15
   interactableLayer:
     serializedVersion: 2
     m_Bits: 512
+  eventLayer:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!54 &604880145
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9307,10 +9311,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ecorche
       objectReference: {fileID: 0}
+    - target: {fileID: 1733467500229002001, guid: 1c053d227627ff141983ae268a327d4d, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1733467500229002001, guid: 1c053d227627ff141983ae268a327d4d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1704011357}
   m_SourcePrefab: {fileID: 100100000, guid: 1c053d227627ff141983ae268a327d4d, type: 3}
 --- !u!4 &691438678 stripped
 Transform:
@@ -14677,8 +14688,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 1031631195}
     m_Modifications:
     - target: {fileID: 301036377627112958, guid: c0a02222a370b124ea2789e37cac3b01, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 301036377627112958, guid: c0a02222a370b124ea2789e37cac3b01, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 301036377627112958, guid: c0a02222a370b124ea2789e37cac3b01, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 301036377627112958, guid: c0a02222a370b124ea2789e37cac3b01, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -20
+      value: -19.5
       objectReference: {fileID: 0}
     - target: {fileID: 301036377627112958, guid: c0a02222a370b124ea2789e37cac3b01, type: 3}
       propertyPath: m_LocalPosition.y
@@ -14715,6 +14738,10 @@ PrefabInstance:
     - target: {fileID: 301036377627112958, guid: c0a02222a370b124ea2789e37cac3b01, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 301036377627112958, guid: c0a02222a370b124ea2789e37cac3b01, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2311033243358526385, guid: c0a02222a370b124ea2789e37cac3b01, type: 3}
       propertyPath: m_Name
@@ -16611,7 +16638,7 @@ Transform:
   m_GameObject: {fileID: 1379282387}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.3, y: 0, z: 2.5}
+  m_LocalPosition: {x: -10, y: 0, z: 2.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19005,6 +19032,32 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6436042430167075844, guid: 92a2d056bfb31174b89f2573c5813d55, type: 3}
   m_PrefabInstance: {fileID: 1698895009}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1704011356 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1733467500229002001, guid: 1c053d227627ff141983ae268a327d4d, type: 3}
+  m_PrefabInstance: {fileID: 691438677}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1704011357
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704011356}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 25, y: 15, z: 70}
+  m_Center: {x: 0, y: 0, z: -10}
 --- !u!1001 &1708974660
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24985,6 +25038,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4142764655054685061, guid: 3b3a64cd0e578534baafd409457b6d62, type: 3}
+      propertyPath: ecorche
+      value: 
+      objectReference: {fileID: 1704011356}
     - target: {fileID: 4142764655054685061, guid: 3b3a64cd0e578534baafd409457b6d62, type: 3}
       propertyPath: stMuerte1
       value: 

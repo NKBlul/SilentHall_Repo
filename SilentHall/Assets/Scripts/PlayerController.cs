@@ -30,9 +30,11 @@ public class PlayerController : MonoBehaviour
     [Header("Raycast: ")]
     [SerializeField] Transform item;
     [SerializeField] float raycastDist = 5f;
+    [SerializeField] float raycastDist2 = 15f;
     private float raycastTimer = 0f;
     private const float raycastInterval = 0.15f; // Raycast interval
     [SerializeField] LayerMask interactableLayer;
+    [SerializeField] LayerMask eventLayer;
     bool haveItem = false;
     private IInteractable currentInteractable; // Cache the last interactable object
 
@@ -52,6 +54,7 @@ public class PlayerController : MonoBehaviour
         if (raycastTimer >= raycastInterval)
         {
             CastRayCast();
+            CastEventRayCast();
             raycastTimer = 0f;
         }
         if (Input.GetKeyDown(KeyCode.E))
@@ -170,6 +173,20 @@ public class PlayerController : MonoBehaviour
         }
 
         Debug.DrawRay(ray.origin, ray.direction * raycastDist, Color.green, 1f);
+    }
+
+    void CastEventRayCast()
+    {
+        Ray ray = new Ray(cam.transform.position, cam.transform.forward);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, raycastDist2, eventLayer))
+        {
+            Debug.Log("EVENT");
+            
+        }
+
+        Debug.DrawRay(ray.origin, ray.direction * raycastDist2, Color.gray, 1f);
+
     }
 
     public void Pickup(GameObject obj)

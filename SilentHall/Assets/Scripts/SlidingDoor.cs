@@ -13,6 +13,7 @@ public class SlidingDoor : MonoBehaviour, IInteractable
 
     float openSpeed = 2f;
     bool isOpen = false;
+    [SerializeField] bool isLocked = true;
 
     void Start()
     {
@@ -22,25 +23,39 @@ public class SlidingDoor : MonoBehaviour, IInteractable
 
     public string GetInteractionPrompt()
     {
-        if (!isOpen)
+        if (isLocked)
         {
-            return $"Press [E] to open door";
+            return $"Door is locked, find a key";
         }
-        return $"Press [E] to close door";
+        else
+        {
+            if (!isOpen)
+            {
+                return $"Press [E] to open door";
+            }
+            return $"Press [E] to close door";
+        }
     }
 
 
     public void OnInteract()
     {
-        if (!isOpen)
-        {
-            StartCoroutine(SlideDoor(leftDoor, closeDoorPos, openDoorPos));
+        if (isLocked) 
+        { 
+            isLocked = false;
         }
         else
         {
-            StartCoroutine(SlideDoor(leftDoor, openDoorPos, closeDoorPos));
-        }
-        isOpen = !isOpen;
+            if (!isOpen)
+            {
+                StartCoroutine(SlideDoor(leftDoor, closeDoorPos, openDoorPos));
+            }
+            else
+            {
+                StartCoroutine(SlideDoor(leftDoor, openDoorPos, closeDoorPos));
+            }
+            isOpen = !isOpen;
+        }  
     }
 
     IEnumerator SlideDoor(GameObject door, Vector3 startPos, Vector3 endPos)

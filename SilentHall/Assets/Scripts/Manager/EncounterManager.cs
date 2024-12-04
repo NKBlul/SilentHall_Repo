@@ -8,6 +8,7 @@ public class EncounterManager : MonoBehaviour
     public static EncounterManager instance;
 
     [SerializeField] GameObject stMuerte1;
+    [SerializeField] GameObject ecorche;
 
     private void Awake()
     {
