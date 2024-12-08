@@ -29,14 +29,22 @@ public class EncounterManager : MonoBehaviour
         switch (eventName) 
         {
             case "event 1":
-                stMuerte1.SetActive(false);
+                StartCoroutine(DissappearReappearTimer(0.75f, stMuerte1, true, false));
                 break;
             case "event 2":
+                StartCoroutine(DissappearReappearTimer(0.75f, shadowyFigure1, true, false));
                 break;
             case "event 3":
                 break;
             default:
                 break;
         }
+    }
+
+    IEnumerator DissappearReappearTimer(float timer, GameObject go, bool tf1, bool tf2)
+    {
+        go.SetActive(tf1);
+        yield return new WaitForSeconds(timer);
+        go.SetActive(tf2);
     }
 }

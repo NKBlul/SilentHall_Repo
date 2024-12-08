@@ -7,8 +7,11 @@ public class UIManager : MonoBehaviour
     public static UIManager instance;
 
     public TextMeshProUGUI interactableText;
+    public TextMeshProUGUI extraText;
+
     public GameObject stamina;
     public Image staminaBar;
+    public GameObject book;
 
     private void Awake()
     {
