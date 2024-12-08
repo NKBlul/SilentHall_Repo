@@ -13,7 +13,6 @@ public class Flashlight : MonoBehaviour, IUseable, IInteractable
         return $"Press [E] to pick-up";
     }
 
-
     public void OnInteract()
     {
         PlayerController player = FindObjectOfType<PlayerController>(); // Find the player controller
@@ -25,6 +24,8 @@ public class Flashlight : MonoBehaviour, IUseable, IInteractable
             transform.localRotation = Quaternion.identity;
             //gameObject.layer = default;
             gameObject.layer = LayerMask.NameToLayer("Default");
+
+            UIManager.instance.ChangeText(1f, UIManager.instance.extraText, $"Press [F] to toggle flashlight");
         }
     }
 
