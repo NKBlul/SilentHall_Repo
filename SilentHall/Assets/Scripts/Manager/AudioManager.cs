@@ -67,16 +67,25 @@ public class AudioManager : MonoBehaviour
         Sound s = Array.Find(sfxSounds, x => x.name == name);
         if (s != null)
         {
-            AudioSource audioSource = new GameObject("TempAudio").AddComponent<AudioSource>();
-            audioSource.clip = s.clip;
-            audioSource.volume = s.volume;
-            audioSource.spatialBlend = 1f; // Enable 3D sound
-            audioSource.minDistance = range; // Adjust based on range
-            audioSource.maxDistance = range * 2f; // Example adjustment
-            audioSource.transform.position = position;
-            audioSource.Play();
+            // Use the prefab manager to instantiate a preconfigured audio source
+            GameObject audioObject = Instantiate(PrefabManager.instance.tempAudioPrefab, position, Quaternion.identity);
+            AudioSource audioSource = audioObject.GetComponent<AudioSource>();
 
-            Destroy(audioSource.gameObject, s.clip.length);
+            if (audioSource != null)
+            {
+                audioSource.clip = s.clip;
+                audioSource.volume = s.volume;
+                audioSource.minDistance = range;
+                audioSource.maxDistance = range * 2f;
+                audioSource.Play();
+
+                // Destroy after the clip finishes playing
+                Destroy(audioObject, s.clip.length);
+            }
+            else
+            {
+                Debug.LogError("Audio source prefab is missing an AudioSource component!");
+            }
         }
         else
         {
