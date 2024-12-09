@@ -182,7 +182,12 @@ public class PlayerController : MonoBehaviour
         if (Physics.Raycast(ray, out hit, raycastDist2, eventLayer))
         {
             Debug.Log("EVENT");
-            
+            IEvent events = hit.collider.GetComponent<IEvent>();
+
+            if (events != null)
+            {
+                events.TriggerEvent();
+            }
         }
 
         Debug.DrawRay(ray.origin, ray.direction * raycastDist2, Color.gray, 1f);
