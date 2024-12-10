@@ -25,7 +25,7 @@ public class Ecorche : MonoBehaviour, IEvent
         {
             eventTriggered = true;
             gameObject.SetActive(false);
-            GameObject newEcorche = Instantiate(PrefabManager.instance.ecorchePrefab, newPos);
+            //GameObject newEcorche = Instantiate(PrefabManager.instance.ecorchePrefab, newPos);
         }
     }
 }

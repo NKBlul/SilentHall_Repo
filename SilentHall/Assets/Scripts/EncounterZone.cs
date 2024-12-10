@@ -6,12 +6,13 @@ public class EncounterZone : MonoBehaviour
 {
     public string eventName;
     public bool hasTriggered = false;
+    [SerializeField] public GameObject triggers;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && !hasTriggered)
         {
-            EncounterManager.instance.TriggerEvent(eventName);
+            EncounterManager.instance.TriggerEvent(eventName, triggers);
             hasTriggered = true;
         }
     }

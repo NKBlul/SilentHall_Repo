@@ -20,11 +20,24 @@ public class EncounterManager : MonoBehaviour
         }
     }
 
-    public void TriggerEvent(string eventName)
+    public void TriggerEvent(string eventName, GameObject triggers = null)
     {
         switch (eventName) 
         {
-            
+            case "event 1":
+                GameObject stmuerte = Instantiate(PrefabManager.instance.stmuertePrefab, triggers.transform);
+                break;
+            case "event 2":
+                Destroy(triggers);
+                break;
+            case "event 3":
+                break;
+            case "event 4":
+                break;
+            case "event 5":
+                break;
+            default: 
+                break;
         }
     }
 
