@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 44f778475c1ffd845afcc143ccf33422
+guid: bbb1bf2bd6db371419495a5d97abc385
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,13 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Organs
-    second: {fileID: 2100000, guid: a9fdcc3746fd4d44c9c9565b499bf6b5, type: 2}
+      name: Blur Text
+    second: {fileID: 2100000, guid: 0e20f1632856cef4ba5f0be780142354, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Skellington
-    second: {fileID: 2100000, guid: 8db16855cf17ae84897c77e67ecea1e8, type: 2}
+      name: Mat_Paper
+    second: {fileID: 2100000, guid: 767214fbb18b8bf4f9a5ed4806dfed5e, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -100,7 +100,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 0.01
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 1
