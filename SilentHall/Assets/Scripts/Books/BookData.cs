@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "NewBookData", menuName = "Book/BookData")]
+[CreateAssetMenu(fileName = "NewBookData", menuName = "ScritableObject/BookData")]
 public class BookData : ScriptableObject
 {
     public string bookTitle;

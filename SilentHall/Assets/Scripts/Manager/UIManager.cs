@@ -7,12 +7,18 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
 
+    [Header("Texts")]
     public TextMeshProUGUI interactableText;
     public TextMeshProUGUI extraText;
 
+    [Header("Stamina")]
     public GameObject stamina;
     public Image staminaBar;
+
+    [Header("Book and paper")]
     public GameObject book;
+    public GameObject paper;
+    public TextMeshProUGUI paperText;
 
     private void Awake()
     {
