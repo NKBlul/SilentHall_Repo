@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c85d4a9318eec9d499f4f831c9e55fd8, type: 3}
   m_Name: BioLabPuzzle
   m_EditorClassIdentifier: 
-  paperText: 
+  paperText: 'To restore life to the body, replace its essential pieces in the correct
+    order.
+
+'
