@@ -6,8 +6,8 @@ public class DDoor : MonoBehaviour, IInteractable
     [SerializeField] GameObject leftDoor;
     [SerializeField] GameObject rightDoor;
 
-    Vector3 openLeftDoorRot = new Vector3(0, -90, 0);
-    Vector3 openRightDoorRot = new Vector3(0, 90, 0);
+    [SerializeField]Vector3 openLeftDoorRot = new Vector3(0, -90, 0);
+    [SerializeField]Vector3 openRightDoorRot = new Vector3(0, 90, 0);
 
     float openSpeed = 2f;
     //bool isOpen = false;
