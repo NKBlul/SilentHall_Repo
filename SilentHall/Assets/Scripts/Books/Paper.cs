@@ -9,19 +9,24 @@ public class Paper : MonoBehaviour, IInteractable
 
     public string GetInteractionPrompt()
     {
-        if (!isReading)
-        {
-            return $"Press [E] to read the paper";
-        }
-        return "";
+        //if (!isReading)
+        //{
+        //    return $"Press [E] to read the paper";
+        //}
+        //return "";
+
+        return $"Press [E] to read the paper";
     }
 
     public void OnInteract()
     {
-        if (!isReading)
-        {
-            //UIManager.instance.paper.SetActive(true);
-            //UIManager.instance.ChangeText(UIManager.instance.paperText, paperData.paperText);
-        }
+        //if (!isReading)
+        //{
+        //    isReading = true;
+        //    UIManager.instance.ReadPaper(paperData);
+        //}
+        //
+        //isReading = true;
+        UIManager.instance.ReadPaper(paperData);
     }
 }

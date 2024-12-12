@@ -60,6 +60,22 @@ public class UIManager : MonoBehaviour
         stamina.SetActive(active);
     }
 
+    public void ReadPaper(PaperData paperData)
+    {
+        GameManager.instance.TogglePlayerMovement(false);
+        GameManager.instance.ShowCursor();
+        paper.SetActive(true);
+        ChangeText(paperText, paperData.paperText);     
+    }
+
+    public void Close()
+    {
+        GameManager.instance.TogglePlayerMovement(true);
+        GameManager.instance.HideCursor();
+        paper.SetActive(false);
+        ClearText(paperText);
+    }
+
     IEnumerator Timer(float time, TextMeshProUGUI text)
     {
         yield return new WaitForSeconds(time);

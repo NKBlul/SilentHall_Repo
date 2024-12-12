@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public float walkingSpeed = 3f;
     public float runningSpeed = 5f;
     bool isRunning = false;
+    public bool canMove = true;
 
     [Header("Stamina System: ")]
     public float currentStamina;
@@ -40,8 +41,6 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
         currentStamina = maxStamina;
         UIManager.instance.UpdateStaminaBar(currentStamina, maxStamina);
         UIManager.instance.ActivateStamina(false);
@@ -49,6 +48,8 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (!canMove) return;
+
         GetInput();
         raycastTimer += Time.deltaTime;
         if (raycastTimer >= raycastInterval)
