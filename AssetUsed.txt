@@ -6,7 +6,6 @@ Japanese classroom: "Japanese Classroom" (https://skfb.ly/6xDsH) by T I A N is l
 Rusty Locker: "Rusted Locker" (https://skfb.ly/oJsx8) by nkd3 is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 Rusty Locker: "Rusty Locker" (https://skfb.ly/oJswK) by D3rpmaster is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 School stair: https://assetstore.unity.com/packages/3d/props/interior/stairs-of-the-japanese-school-model-76668
-Font: https://www.dafont.com/ghastly-panic.font
 Piano: "Grand Piano" (https://skfb.ly/oGR77) by siparmin is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 Skeleton: "Skeleton" (https://skfb.ly/SnDY) by Diego Luján García is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 Ecorche: "Male Full Body Ecorche" (https://skfb.ly/KFyA) by Diego Luján García is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
@@ -19,6 +18,11 @@ Empty Jar: "Empty Jar" (https://skfb.ly/oMnuN) by shirlanne is licensed under Cr
 Paper: "Old Paper" (https://skfb.ly/oUuRx) by tukuru_kunn is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 shelf and cart: "Lab Shelf & Utility Cart | Virus Laboratory" (https://skfb.ly/p6HOX) by Naked Singularity Studio is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 Wall Clock: "Wall Clock" (https://skfb.ly/6V7Ou) by FelipeMSX is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+Lab Cabinet Window: "Lab Cabinet Windowed" (https://skfb.ly/6wTyP) by ChelseaM is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+Wooden Lab Cabinet: "Wooden Lab Cabinet" (https://skfb.ly/6wTzx) by ChelseaM is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 
 ==========Audio==========
 BGM: https://pixabay.com/music/mystery-horror-background-atmosphere-11-240870/
+
+==========Font==========
+Scary font: https://www.dafont.com/ghastly-panic.font
