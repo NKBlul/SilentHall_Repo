@@ -20,6 +20,9 @@ public class UIManager : MonoBehaviour
     public GameObject paper;
     public TextMeshProUGUI paperText;
 
+    [Header("Flashlight")]
+    public GameObject flashlight;
+
     private void Awake()
     {
         if (instance == null)
@@ -65,7 +68,7 @@ public class UIManager : MonoBehaviour
         GameManager.instance.TogglePlayerMovement(false);
         GameManager.instance.ShowCursor();
         paper.SetActive(true);
-        ChangeText(paperText, paperData.paperText);     
+        ChangeText(paperText, paperData.paperText);
     }
 
     public void Close()

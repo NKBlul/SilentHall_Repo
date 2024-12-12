@@ -26,6 +26,7 @@ public class Flashlight : MonoBehaviour, IUseable, IInteractable
             gameObject.layer = LayerMask.NameToLayer("Default");
 
             UIManager.instance.ChangeText(1f, UIManager.instance.extraText, $"Press [F] to toggle flashlight");
+            UIManager.instance.flashlight.SetActive(true);
         }
     }
 

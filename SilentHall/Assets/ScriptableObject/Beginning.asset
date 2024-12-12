@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c85d4a9318eec9d499f4f831c9e55fd8, type: 3}
+  m_Name: Beginning
+  m_EditorClassIdentifier: 
+  paperText: "You\u2019re not alone. Escape before you become one of us. I followed
+    him, never suspecting he was behind it all. This place remains untouched, even
+    with plans to demolish it.\n\nI tried to hide, but he cursed me. I can\u2019t
+    speak his name, and soon, I\u2019ll be gone.\n\nThere\u2019s a hatch on the first
+    floor leading to the basement. Be careful\u2014the deeper you go, the more aggressive
+    the ghosts become.\n\nGood luck."
