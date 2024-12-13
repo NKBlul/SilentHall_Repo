@@ -79,8 +79,11 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Walk();
-        Look();
+        if (canMove)
+        {
+            Walk();
+            Look();
+        }
     }
 
     void GetInput()

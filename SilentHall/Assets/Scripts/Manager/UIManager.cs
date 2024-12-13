@@ -1,11 +1,14 @@
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
+
+    public GameObject crosshair;
 
     [Header("Texts")]
     public TextMeshProUGUI interactableText;
@@ -88,6 +91,7 @@ public class UIManager : MonoBehaviour
     {
         GameManager.instance.TogglePlayerMovement(true);
         GameManager.instance.HideCursor();
+        crosshair.SetActive(true);
         numlockUI2d.SetActive(false);
         numlockUI3d.SetActive(false);
     }
@@ -99,19 +103,13 @@ public class UIManager : MonoBehaviour
 
         GameManager.instance.TogglePlayerMovement(false);
         GameManager.instance.ShowCursor();
+
+        crosshair.SetActive(false);
+
         numlockUI2d.SetActive(true);
         numlockUI3d.SetActive(true);
 
         uiNumLock.password = numlock.password;
-
-        // Position the 3D UI in front of the player
-        Vector3 forwardPosition = playerPos.position + playerPos.forward * offset.z
-                                  + playerPos.up * offset.y
-                                  + playerPos.right * offset.x;
-        numlockUI3d.transform.position = forwardPosition;
-
-        // Rotate the UI to face the player
-        //numlockUI3d.transform.rotation = Quaternion.LookRotation(numlockUI3d.transform.position - playerPos.position);
     }
 
     IEnumerator Timer(float time, TextMeshProUGUI text)
