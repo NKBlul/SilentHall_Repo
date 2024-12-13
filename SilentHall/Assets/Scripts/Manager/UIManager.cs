@@ -23,6 +23,10 @@ public class UIManager : MonoBehaviour
     [Header("Flashlight")]
     public GameObject flashlight;
 
+    [Header("NumLock")]
+    public GameObject numlockUI2d;
+    public GameObject numlockUI3d;
+
     private void Awake()
     {
         if (instance == null)
@@ -71,12 +75,42 @@ public class UIManager : MonoBehaviour
         ChangeText(paperText, paperData.paperText);
     }
 
-    public void Close()
+    public void Close(GameObject toClose)
     {
         GameManager.instance.TogglePlayerMovement(true);
         GameManager.instance.HideCursor();
-        paper.SetActive(false);
-        ClearText(paperText);
+        toClose.SetActive(false);
+        //ClearText(paperText);
+    }
+
+    public void CloseNumlock()
+    {
+        GameManager.instance.TogglePlayerMovement(true);
+        GameManager.instance.HideCursor();
+        numlockUI2d.SetActive(false);
+        numlockUI3d.SetActive(false);
+    }
+
+    public void ActivateNumlockUI(NumLock numlock)
+    {
+        Transform playerPos = GameManager.instance.player.transform;
+        UINumLock uiNumLock = numlockUI3d.GetComponent<UINumLock>();
+
+        GameManager.instance.TogglePlayerMovement(false);
+        GameManager.instance.ShowCursor();
+        numlockUI2d.SetActive(true);
+        numlockUI3d.SetActive(true);
+
+        uiNumLock.password = numlock.password;
+
+        // Position the 3D UI in front of the player
+        Vector3 forwardPosition = playerPos.position + playerPos.forward * offset.z
+                                  + playerPos.up * offset.y
+                                  + playerPos.right * offset.x;
+        numlockUI3d.transform.position = forwardPosition;
+
+        // Rotate the UI to face the player
+        //numlockUI3d.transform.rotation = Quaternion.LookRotation(numlockUI3d.transform.position - playerPos.position);
     }
 
     IEnumerator Timer(float time, TextMeshProUGUI text)
