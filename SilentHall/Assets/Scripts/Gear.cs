@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 public class Gear : MonoBehaviour
 {
     int rotateAmount = 36;
-    int gearIndex = 0;
+    public int gearIndex = 0;
 
     private void OnEnable()
     {
@@ -41,9 +41,15 @@ public class Gear : MonoBehaviour
 
         gearIndex++;
 
-        if (gearIndex + 1 > 9)
+        if (gearIndex + 1 > 10)
         {
             gearIndex = 0;
+        }
+
+        UINumLock uiNumLock = GetComponentInParent<UINumLock>(); // Get the UINumLock component from the parent GameObject
+        if (uiNumLock != null)
+        {
+            uiNumLock.GetCombination(); // Call GetCombination after rotation
         }
     }
 }

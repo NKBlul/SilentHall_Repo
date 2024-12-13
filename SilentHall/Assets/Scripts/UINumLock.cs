@@ -12,6 +12,21 @@ public class UINumLock : MonoBehaviour
         
     }
     
+    public void GetCombination()
+    {
+        currentRotation = "";
+        foreach (Transform child in transform)
+        {
+            Gear gear = child.GetComponent<Gear>();
+            if (gear != null) // Make sure the child has a Gear component.
+            {
+                currentRotation += gear.gearIndex.ToString(); // Append each gear's index to the combination.
+            }
+        }
+
+        Debug.Log($"Current Combination: {currentRotation}");
+    }
+
     public bool CheckCombination()
     {
         return password == currentRotation;
