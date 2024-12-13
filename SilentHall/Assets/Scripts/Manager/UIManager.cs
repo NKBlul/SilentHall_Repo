@@ -26,6 +26,7 @@ public class UIManager : MonoBehaviour
     [Header("NumLock")]
     public GameObject numlockUI2d;
     public GameObject numlockUI3d;
+    public Vector3 offset;
 
     private void Awake()
     {
