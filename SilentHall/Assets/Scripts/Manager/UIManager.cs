@@ -89,11 +89,16 @@ public class UIManager : MonoBehaviour
 
     public void CloseNumlock()
     {
+        UINumLock uiNumLock = numlockUI3d.GetComponent<UINumLock>();
+        NumLock numLock = uiNumLock.numLock.GetComponent<NumLock>();
+
         GameManager.instance.TogglePlayerMovement(true);
         GameManager.instance.HideCursor();
         crosshair.SetActive(true);
         numlockUI2d.SetActive(false);
         numlockUI3d.SetActive(false);
+        
+        numLock.isInteracting = false;
     }
 
     public void ActivateNumlockUI(NumLock numlock)
@@ -101,6 +106,7 @@ public class UIManager : MonoBehaviour
         Transform playerPos = GameManager.instance.player.transform;
         UINumLock uiNumLock = numlockUI3d.GetComponent<UINumLock>();
 
+        ClearText(interactableText);
         GameManager.instance.TogglePlayerMovement(false);
         GameManager.instance.ShowCursor();
 
@@ -109,6 +115,7 @@ public class UIManager : MonoBehaviour
         numlockUI2d.SetActive(true);
         numlockUI3d.SetActive(true);
 
+        uiNumLock.numLock = numlock.gameObject;
         uiNumLock.password = numlock.password;
     }
 

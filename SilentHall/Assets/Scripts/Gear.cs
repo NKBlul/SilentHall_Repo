@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.Mathematics;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class Gear : MonoBehaviour
 {
@@ -18,38 +14,41 @@ public class Gear : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0)) // Left mouse button click
         {
-            // Create a ray from the camera to the mouse position
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            // Perform the raycast
-            if (Physics.Raycast(ray, out hit))
-            {
-                // Check if the ray hit this object
-                if (hit.collider.gameObject == gameObject)
-                {
-                    Debug.Log($"{gameObject.name} was clicked!");
-                    RotateGear();
-                }
-            }
+            OnClick(36f, 1);
+        }
+        else if (Input.GetMouseButtonDown(1)) // Right mouse button click
+        {
+            OnClick(-36f, -1);
         }
     }
 
-    void RotateGear()
+    void OnClick(float rotationAngle, int gearChange)
     {
-        transform.Rotate(Vector3.up, 36f, Space.Self);  // Rotate 36 degrees around the local Y-axis
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out RaycastHit hit) && hit.collider.gameObject == gameObject)
+        {
+            Debug.Log($"{gameObject.name} was clicked!");
+            Rotate(rotationAngle, gearChange);
+        }
+    }
 
-        gearIndex++;
+    private void Rotate(float rotationAngle, int gearChange)
+    {
+        transform.Rotate(Vector3.up, rotationAngle, Space.Self);
 
-        if (gearIndex + 1 > 10)
+        gearIndex += gearChange;
+
+        // Wrap gearIndex to stay within valid range (0-9)
+        if (gearIndex > 9)
         {
             gearIndex = 0;
         }
-
-        UINumLock uiNumLock = GetComponentInParent<UINumLock>(); // Get the UINumLock component from the parent GameObject
-        if (uiNumLock != null)
+        else if (gearIndex < 0)
         {
-            uiNumLock.GetCombination(); // Call GetCombination after rotation
+            gearIndex = 9;
         }
+
+        UINumLock uiNumLock = GetComponentInParent<UINumLock>();
+        uiNumLock?.GetCombination(); // Call GetCombination if UINumLock is not null
     }
 }
