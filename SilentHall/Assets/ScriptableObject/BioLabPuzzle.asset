@@ -12,8 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c85d4a9318eec9d499f4f831c9e55fd8, type: 3}
   m_Name: BioLabPuzzle
   m_EditorClassIdentifier: 
-  paperText: 'To restore life to the body, replace its essential pieces in the correct
-    order.
+  paperText: 'without the pump, the mind cannot guide. And without the mind, the
+    filter remains blind.
 
+
+    Look beneath the time to find the core, Numbers will
+    unlock where the mind is stored, and where water rests, the filter is restored
+
+
+    To
+    restore life to the body, replace its essential pieces in the correct order.
 
 '

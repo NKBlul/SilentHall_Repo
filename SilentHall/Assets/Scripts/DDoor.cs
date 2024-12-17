@@ -51,6 +51,7 @@ public class DDoor : MonoBehaviour, IInteractable
             Debug.Log($"Opening door");
             StartCoroutine(OpenDoor(leftDoor, openLeftDoorRot));
             StartCoroutine(OpenDoor(rightDoor, openRightDoorRot));
+            gameObject.layer = default;
         } 
     }
 
