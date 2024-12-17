@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Gear : MonoBehaviour
 {
-    int rotateAmount = 36;
+    float rotateAmount = 36;
     public int gearIndex = 0;
 
     private void OnEnable()
@@ -14,11 +14,11 @@ public class Gear : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0)) // Left mouse button click
         {
-            OnClick(36f, 1);
+            OnClick(rotateAmount, 1);
         }
         else if (Input.GetMouseButtonDown(1)) // Right mouse button click
         {
-            OnClick(-36f, -1);
+            OnClick(-rotateAmount, -1);
         }
     }
 

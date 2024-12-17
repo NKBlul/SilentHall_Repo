@@ -6,7 +6,7 @@ public class HidingLocker : BaseLocker, IInteractable
 {
     [SerializeField] Transform hidingSpot;
 
-    public string GetInteractionPrompt()
+    public string GetInteractionPrompt(GameObject trigger)
     {
         return $"Press [E] to hide";
     }

@@ -73,10 +73,10 @@ public class PlayerController : MonoBehaviour
         {
             UseItem();
         }
-        if (Input.GetKeyDown(KeyCode.Q) && haveItem)
-        {
-            Drop();
-        }
+        //if (Input.GetKeyDown(KeyCode.Q) && haveItem)
+        //{
+        //    Drop();
+        //}
 
         RegenStamina();
     }
@@ -168,7 +168,7 @@ public class PlayerController : MonoBehaviour
                 if (interactable != currentInteractable)
                 {
                     currentInteractable = interactable; // Update the cached interactable
-                    UIManager.instance.ChangeText(UIManager.instance.interactableText, interactable.GetInteractionPrompt());
+                    UIManager.instance.ChangeText(UIManager.instance.interactableText, interactable.GetInteractionPrompt(gameObject));
                 }
                 return;
             }

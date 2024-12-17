@@ -4,6 +4,6 @@ using UnityEngine;
 
 public interface IInteractable
 {
-    string GetInteractionPrompt();
+    string GetInteractionPrompt(GameObject trigger);
     void OnInteract(GameObject trigger);
 }

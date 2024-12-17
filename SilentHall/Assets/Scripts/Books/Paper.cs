@@ -7,7 +7,7 @@ public class Paper : MonoBehaviour, IInteractable
     public PaperData paperData;
     public bool isReading;
 
-    public string GetInteractionPrompt()
+    public string GetInteractionPrompt(GameObject trigger)
     {
         //if (!isReading)
         //{

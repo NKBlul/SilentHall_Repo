@@ -6,7 +6,7 @@ using UnityEngine;
 public class Book : MonoBehaviour, IInteractable
 {
     public BookData bookData;
-    public string GetInteractionPrompt()
+    public string GetInteractionPrompt(GameObject trigger)
     {
         return $"Press [E] to read the book";
     }

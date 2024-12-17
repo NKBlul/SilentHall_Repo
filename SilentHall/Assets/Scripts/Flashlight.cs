@@ -8,7 +8,7 @@ public class Flashlight : MonoBehaviour, IUseable, IInteractable
     [SerializeField] Light spotLight;
     bool isOn;
 
-    public string GetInteractionPrompt()
+    public string GetInteractionPrompt(GameObject trigger)
     {
         return $"Press [E] to pick-up";
     }

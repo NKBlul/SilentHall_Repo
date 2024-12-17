@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ItemLocker : BaseLocker, IInteractable
 {
-    public string GetInteractionPrompt()
+    public string GetInteractionPrompt(GameObject trigger)
     {
         if (!isOpen)
         {
@@ -18,6 +18,7 @@ public class ItemLocker : BaseLocker, IInteractable
         {
             animator.Play(LockerAnimationState.Locker_Open.ToString());
             isOpen = true;
+            gameObject.layer = default;
         }
     }
 }

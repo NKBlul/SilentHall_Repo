@@ -15,7 +15,7 @@ public class SlidingDoor : MonoBehaviour, IInteractable
     bool isOpen = false;
     [SerializeField] bool isLocked = true;
     bool haveKey = false;
-    string requiredKey;
+    public string requiredKey;
 
     void Start()
     {
@@ -23,13 +23,32 @@ public class SlidingDoor : MonoBehaviour, IInteractable
         openDoorPos = new Vector3(0, closeDoorPos.y, closeDoorPos.z);
     }
 
-    public string GetInteractionPrompt()
+    public string GetInteractionPrompt(GameObject trigger)
     {
-        if (isLocked)
+        PlayerController player = trigger.GetComponent<PlayerController>();
+
+        //if (isLocked)
+        //{
+        //    if (player.keys.Contains(requiredKey))
+        //    {
+        //        return $"Press [E] to unlock door";
+        //    }
+        //    return $"Door is locked, find a key";
+        //}
+        //else
+        //{
+        //    if (!isOpen)
+        //    {
+        //        return $"Press [E] to open door";
+        //    }
+        //    return $"Press [E] to close door";
+        //}
+
+        if (isLocked && !player.keys.Contains(requiredKey))
         {
             return $"Door is locked, find a key";
         }
-        else
+        else if ((player.keys.Contains(requiredKey)))
         {
             if (!isOpen)
             {
@@ -37,6 +56,7 @@ public class SlidingDoor : MonoBehaviour, IInteractable
             }
             return $"Press [E] to close door";
         }
+        return $"";
     }
 
 
@@ -44,12 +64,31 @@ public class SlidingDoor : MonoBehaviour, IInteractable
     {
         PlayerController player = trigger.GetComponent<PlayerController>();
 
-        if (isLocked) 
-        { 
-            isLocked = false;
-        }
-        else
+        //if (isLocked)
+        //{
+        //    if (player.keys.Contains(requiredKey))
+        //    {
+        //        isLocked = false;
+        //        haveKey = true;
+        //    }
+        //}
+        //else
+        //{
+        //    if (!isOpen)
+        //    {
+        //        StartCoroutine(SlideDoor(leftDoor, closeDoorPos, openDoorPos));
+        //    }
+        //    else
+        //    {
+        //        StartCoroutine(SlideDoor(leftDoor, openDoorPos, closeDoorPos));
+        //    }
+        //    isOpen = !isOpen;
+        //}
+
+        if (player.keys.Contains(requiredKey))
         {
+            isLocked = false;
+            haveKey = true;
             if (!isOpen)
             {
                 StartCoroutine(SlideDoor(leftDoor, closeDoorPos, openDoorPos));
@@ -60,24 +99,6 @@ public class SlidingDoor : MonoBehaviour, IInteractable
             }
             isOpen = !isOpen;
         }
-
-        if (isLocked)
-        {
-            if (!player.keys.Contains(requiredKey))
-            {
-
-            }
-        }
-    }
-
-    bool HaveKey(string keyRequired)
-    {
-        if (requiredKey == keyRequired)
-        {
-            haveKey = true;
-        }
-        haveKey = false;
-        return haveKey;
     }
 
     IEnumerator SlideDoor(GameObject door, Vector3 startPos, Vector3 endPos)

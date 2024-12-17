@@ -13,7 +13,7 @@ public class DDoor : MonoBehaviour, IInteractable
     //bool isOpen = false;
     [SerializeField] bool isLocked = true;
 
-    public string GetInteractionPrompt()
+    public string GetInteractionPrompt(GameObject trigger)
     {
         if (isLocked)
         {
