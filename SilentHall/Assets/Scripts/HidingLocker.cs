@@ -11,7 +11,7 @@ public class HidingLocker : BaseLocker, IInteractable
         return $"Press [E] to hide";
     }
 
-    public void OnInteract()
+    public void OnInteract(GameObject trigger)
     {
         if (!isOpen)
         {

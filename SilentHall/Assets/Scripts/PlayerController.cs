@@ -1,4 +1,5 @@
 using Palmmedia.ReportGenerator.Core.CodeAnalysis;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -39,6 +40,9 @@ public class PlayerController : MonoBehaviour
     bool haveItem = false;
     private IInteractable currentInteractable; // Cache the last interactable object
 
+    [Header("Other: ")]
+    public List<string> keys = new List<string>();
+
     void Start()
     {
         currentStamina = maxStamina;
@@ -62,7 +66,7 @@ public class PlayerController : MonoBehaviour
         {
             if (currentInteractable != null)
             {
-                currentInteractable.OnInteract();
+                currentInteractable.OnInteract(gameObject);
             }
         }
         if (Input.GetKeyDown(KeyCode.F) && haveItem)

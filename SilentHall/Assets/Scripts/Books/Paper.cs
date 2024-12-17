@@ -18,7 +18,7 @@ public class Paper : MonoBehaviour, IInteractable
         return $"Press [E] to read the paper";
     }
 
-    public void OnInteract()
+    public void OnInteract(GameObject trigger)
     {
         //if (!isReading)
         //{

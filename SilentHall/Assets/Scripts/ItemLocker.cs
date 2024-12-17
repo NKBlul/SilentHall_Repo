@@ -12,7 +12,7 @@ public class ItemLocker : BaseLocker, IInteractable
     }
 
 
-    public void OnInteract()
+    public void OnInteract(GameObject trigger)
     {
         if (!isOpen)
         {

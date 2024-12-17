@@ -14,6 +14,8 @@ public class SlidingDoor : MonoBehaviour, IInteractable
     float openSpeed = 2f;
     bool isOpen = false;
     [SerializeField] bool isLocked = true;
+    bool haveKey = false;
+    string requiredKey;
 
     void Start()
     {
@@ -38,8 +40,10 @@ public class SlidingDoor : MonoBehaviour, IInteractable
     }
 
 
-    public void OnInteract()
+    public void OnInteract(GameObject trigger)
     {
+        PlayerController player = trigger.GetComponent<PlayerController>();
+
         if (isLocked) 
         { 
             isLocked = false;
@@ -55,7 +59,25 @@ public class SlidingDoor : MonoBehaviour, IInteractable
                 StartCoroutine(SlideDoor(leftDoor, openDoorPos, closeDoorPos));
             }
             isOpen = !isOpen;
-        }  
+        }
+
+        if (isLocked)
+        {
+            if (!player.keys.Contains(requiredKey))
+            {
+
+            }
+        }
+    }
+
+    bool HaveKey(string keyRequired)
+    {
+        if (requiredKey == keyRequired)
+        {
+            haveKey = true;
+        }
+        haveKey = false;
+        return haveKey;
     }
 
     IEnumerator SlideDoor(GameObject door, Vector3 startPos, Vector3 endPos)

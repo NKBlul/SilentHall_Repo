@@ -18,7 +18,7 @@ public class NumLock : MonoBehaviour, IInteractable
         return " ";
     }
 
-    public void OnInteract()
+    public void OnInteract(GameObject trigger)
     {
         UIManager.instance.ActivateNumlockUI(this);
         isInteracting = true;

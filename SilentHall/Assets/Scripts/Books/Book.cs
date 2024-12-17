@@ -12,7 +12,7 @@ public class Book : MonoBehaviour, IInteractable
     }
 
 
-    public void OnInteract()
+    public void OnInteract(GameObject trigger)
     {
         
     }

@@ -31,7 +31,7 @@ public class DDoor : MonoBehaviour, IInteractable
     }
 
 
-    public void OnInteract()
+    public void OnInteract(GameObject trigger)
     {
         if (isLocked)
         {

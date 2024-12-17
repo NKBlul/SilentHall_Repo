@@ -13,9 +13,9 @@ public class Flashlight : MonoBehaviour, IUseable, IInteractable
         return $"Press [E] to pick-up";
     }
 
-    public void OnInteract()
+    public void OnInteract(GameObject trigger)
     {
-        PlayerController player = FindObjectOfType<PlayerController>(); // Find the player controller
+        PlayerController player = trigger.GetComponent<PlayerController>(); // Find the player controller
         if (player != null)
         {
             player.Pickup(gameObject); // Call the Pickup method on the player and pass the flashlight as the object to pick up
