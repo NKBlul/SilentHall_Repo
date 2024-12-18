@@ -48,3 +48,8 @@ MonoBehaviour:
   skeletonPrefab: {fileID: 2409832544153793472, guid: 3061398a822ed634da871bfd73f729d8, type: 3}
   stmuertePrefab: {fileID: 2311033243358526385, guid: c0a02222a370b124ea2789e37cac3b01, type: 3}
   tempAudioPrefab: {fileID: 6662297479291537911, guid: d24b93fbd27adb840968df23266e0dd2, type: 3}
+  brainPrefab: {fileID: 4306199533803115613, guid: 2d5d39f6af0a1674ba63726cce07ac87, type: 3}
+  heartPrefab: {fileID: 1636783582627205783, guid: b138fc96c110f624ebf0de9f9ffc3ebf, type: 3}
+  leftLungPrefab: {fileID: 7170965770491184617, guid: d836fd5062e0a4c4396deb24c016732e, type: 3}
+  RightLungPrefab: {fileID: 627933427051986293, guid: 15d651e5058a52640b934a8bafc49ae1, type: 3}
+  liverPrefab: {fileID: 7557095694292412593, guid: d287b727c1522f04b96a56df913620fb, type: 3}

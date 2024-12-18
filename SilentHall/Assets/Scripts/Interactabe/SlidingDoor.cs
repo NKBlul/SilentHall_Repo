@@ -44,11 +44,11 @@ public class SlidingDoor : MonoBehaviour, IInteractable
         //    return $"Press [E] to close door";
         //}
 
-        if (isLocked && !player.keys.Contains(requiredKey))
+        if (isLocked && !player.pickable.Contains(requiredKey))
         {
             return $"Door is locked, find a key";
         }
-        else if ((player.keys.Contains(requiredKey)))
+        else if ((player.pickable.Contains(requiredKey)) || !isLocked)
         {
             if (!isOpen)
             {
@@ -85,7 +85,7 @@ public class SlidingDoor : MonoBehaviour, IInteractable
         //    isOpen = !isOpen;
         //}
 
-        if (player.keys.Contains(requiredKey))
+        if (player.pickable.Contains(requiredKey) || !isLocked)
         {
             isLocked = false;
             haveKey = true;

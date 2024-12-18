@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
     private IInteractable currentInteractable; // Cache the last interactable object
 
     [Header("Other: ")]
-    public List<string> keys = new List<string>();
+    public List<string> pickable = new List<string>();
 
     void Start()
     {

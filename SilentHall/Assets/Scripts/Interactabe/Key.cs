@@ -12,7 +12,7 @@ public class Key : MonoBehaviour, IInteractable
     {
         PlayerController player = trigger.GetComponent<PlayerController>();
 
-        player.keys.Add(keyName);
+        player.pickable.Add(keyName);
 
         UIManager.instance.ChangeText(1, UIManager.instance.extraText, $"Picked up {keyName} key");
 
