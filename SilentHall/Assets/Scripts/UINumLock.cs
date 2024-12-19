@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class UINumLock : MonoBehaviour
 {
     public GameObject numLock;
+    DDoor door;
     public string password;
     public string currentRotation;
     
@@ -22,7 +23,18 @@ public class UINumLock : MonoBehaviour
         Debug.Log($"Current Combination: {currentRotation}");
         if (CheckCombination())
         {
-            Debug.Log($"Correct Password");
+            UIManager.instance.CloseNumlock();
+
+            door = numLock.GetComponent<NumLock>().door;
+            if (door == null) 
+            {
+                Debug.Log("Door not found");
+            }
+            if (door != null)
+            {
+                door.UnlockAndOpen();
+            }
+            Destroy(numLock);
         }
     }
 

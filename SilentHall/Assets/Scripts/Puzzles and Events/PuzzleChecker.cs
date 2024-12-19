@@ -11,7 +11,8 @@ public class PuzzleChecker : MonoBehaviour
     {
         if (currentOrgan == requiredOrgans)
         {
-            //GameManager.instance.playerRef.pickable.Add();
+            GameManager.instance.playerRef.pickable.Add("MLKey");
+            UIManager.instance.ChangeText(2f, UIManager.instance.extraText, $"You received the Music lab key");
         }
     }
 }

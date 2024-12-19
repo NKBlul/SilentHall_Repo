@@ -5,7 +5,7 @@ using UnityEngine;
 public class NumLock : MonoBehaviour, IInteractable
 {
     public string password;
-    public List<GameObject> gears = new List<GameObject>();
+    public DDoor door;
     public bool isInteracting = false;
 
     public string GetInteractionPrompt(GameObject trigger)

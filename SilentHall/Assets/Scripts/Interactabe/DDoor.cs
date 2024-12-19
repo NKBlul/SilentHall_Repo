@@ -9,23 +9,33 @@ public class DDoor : MonoBehaviour, IInteractable
     [SerializeField]Vector3 openLeftDoorRot = new Vector3(0, -90, 0);
     [SerializeField]Vector3 openRightDoorRot = new Vector3(0, 90, 0);
 
+    public bool useKey = false;
+    public string requiredKey;
+    public bool useNumLock = false;
     float openSpeed = 2f;
-    //bool isOpen = false;
     [SerializeField] bool isLocked = true;
 
     public string GetInteractionPrompt(GameObject trigger)
     {
+        PlayerController player = trigger.GetComponent<PlayerController>();
         if (isLocked)
         {
-            return $"Door is Locked, Find a Key";
+            if (useNumLock)
+            {
+                return $"Unlock the lock";
+            }
+            if (useKey)
+            {
+                if (player.pickable.Contains(requiredKey))
+                {
+                    return $"Press [E] to unlock door";
+                }
+                return $"Door is Locked, Find a Key";
+            }
+            return "You shouldn't be getting this text";
         }
         else
         {
-            //if (!isOpen)
-            //{
-            //    return $"Press [E] to open door";
-            //}
-            //return $"Press [E] to close door";
             return $"Press [E] to open door";
         }
     }
@@ -33,26 +43,39 @@ public class DDoor : MonoBehaviour, IInteractable
 
     public void OnInteract(GameObject trigger)
     {
+        PlayerController player = trigger.GetComponent<PlayerController>();
+        NumLock numLock = GetComponentInChildren<NumLock>();
         if (isLocked)
         {
-            isLocked = false;
+            if (useNumLock)
+            {
+                //numLock.OnInteract(trigger);
+            }
+            if (useKey)
+            {
+                if (player.pickable.Contains(requiredKey))
+                {
+                    UnlockAndOpen();
+                }
+            }
         }
         else
         {
-            //if (!isOpen)
-            //{
-            //
-            //}
-            //else
-            //{
-            //
-            //}
-            //isOpen = !isOpen;
-            Debug.Log($"Opening door");
-            StartCoroutine(OpenDoor(leftDoor, openLeftDoorRot));
-            StartCoroutine(OpenDoor(rightDoor, openRightDoorRot));
-            gameObject.layer = default;
+            OpenDoors();
         } 
+    }
+
+    public void UnlockAndOpen()
+    {
+        isLocked = false; // Mark the door as unlocked.
+        OpenDoors(); // Open the doors.
+    }
+
+    void OpenDoors()
+    {
+        StartCoroutine(OpenDoor(leftDoor, openLeftDoorRot));
+        StartCoroutine(OpenDoor(rightDoor, openRightDoorRot));
+        gameObject.layer = default;
     }
 
     IEnumerator OpenDoor(GameObject door, Vector3 endRot)

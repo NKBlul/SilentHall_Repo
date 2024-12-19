@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c85d4a9318eec9d499f4f831c9e55fd8, type: 3}
   m_Name: Beginning
   m_EditorClassIdentifier: 
-  paperText: "You\u2019re not alone. Escape before you become one of us. I followed
-    him, never suspecting he was behind it all. This place remains untouched, even
-    with plans to demolish it.\n\nI tried to hide, but he cursed me. I can\u2019t
-    speak his name, and soon, I\u2019ll be gone.\n\nThere\u2019s a hatch on the first
-    floor leading to the basement. Be careful\u2014the deeper you go, the more aggressive
-    the ghosts become.\n\nGood luck."
+  paperText: "You\u2019re not alone here. Get out before you end up like the rest
+    of us.\n\nI followed him, never realizing he was the one behind everything. Now
+    I\u2019m trapped. This place hasn\u2019t changed a bit, even though they\u2019ve
+    been planning to tear it down for years.\n\nI tried to hide, but he found me.
+    He cursed me, silencing me forever. Soon, I\u2019ll disappear completely.\n\nThere\u2019s
+    a hatch on the first floor\u2014it leads to the basement. Be careful, though.
+    The deeper you go, the more dangerous the ghosts become.\n\nGood luck. You\u2019ll
+    need it."
