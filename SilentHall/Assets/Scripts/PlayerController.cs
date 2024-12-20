@@ -30,17 +30,19 @@ public class PlayerController : MonoBehaviour
     private float rotationX = 0f;  // Vertical rotation tracker
 
     [Header("Raycast: ")]
-    [SerializeField] Transform item;
     [SerializeField] float raycastDist = 5f;
     [SerializeField] float raycastDist2 = 15f;
     private float raycastTimer = 0f;
     private const float raycastInterval = 0.15f; // Raycast interval
     [SerializeField] LayerMask interactableLayer;
     [SerializeField] LayerMask eventLayer;
-    bool haveItem = false;
     private IInteractable currentInteractable; // Cache the last interactable object
 
-    [Header("Other: ")]
+    [Header("Pickable: ")]
+    public Transform rightHand;
+    public Transform leftHand;
+    bool haveRightItem = false;
+    public bool haveLeftItem = false;
     public List<string> pickable = new List<string>();
 
     void Start()
@@ -69,15 +71,14 @@ public class PlayerController : MonoBehaviour
                 currentInteractable.OnInteract(gameObject);
             }
         }
-        if (Input.GetKeyDown(KeyCode.F) && haveItem)
+        if (Input.GetKeyDown(KeyCode.F) && haveRightItem)
         {
             UseItem();
         }
-        //if (Input.GetKeyDown(KeyCode.Q) && haveItem)
-        //{
-        //    Drop();
-        //}
-
+        if (Input.GetKeyDown(KeyCode.Q) && haveLeftItem)
+        {
+            Drop();
+        }
         RegenStamina();
     }
 
@@ -202,10 +203,10 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    public void Pickup(GameObject obj)
+    public void Pickup(GameObject obj, Transform hand)
     {
-        haveItem = true;
-        obj.transform.SetParent(item);
+        haveRightItem = true;
+        obj.transform.SetParent(hand);
 
         currentInteractable = null;
         UIManager.instance.ClearText(UIManager.instance.interactableText);
@@ -213,15 +214,15 @@ public class PlayerController : MonoBehaviour
 
     void UseItem()
     {
-        item.GetComponentInChildren<IUseable>().Use();
+        rightHand.GetComponentInChildren<IUseable>().Use();
     }
 
     void Drop()
     {
-        item.GetChild(0).gameObject.layer = LayerMask.NameToLayer("Interactable");
-        item.GetComponentInChildren<Rigidbody>().isKinematic = false;
-        item.DetachChildren();
-        haveItem = false;
+        leftHand.GetChild(0).gameObject.layer = LayerMask.NameToLayer("Interactable");
+        leftHand.GetComponentInChildren<Rigidbody>().isKinematic = false;
+        leftHand.DetachChildren();
+        haveLeftItem = false;
     }
 
     void RegenStamina()

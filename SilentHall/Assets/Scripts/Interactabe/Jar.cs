@@ -9,8 +9,14 @@ public class Jar : MonoBehaviour, IInteractable
 
     public string GetInteractionPrompt(GameObject trigger)
     {
+        PlayerController player = trigger.GetComponent<PlayerController>(); // Find the player controller
+
         if (!isTaken) 
         {
+            if (player.leftHand.childCount > 0)
+            {
+                return $"Your hand is full";
+            }
             return $"Press [E] to pick up {jarContent.name}";
         }
         return "";
@@ -21,9 +27,16 @@ public class Jar : MonoBehaviour, IInteractable
         if (!isTaken) 
         {
             PlayerController player = trigger.GetComponent<PlayerController>();
-            isTaken = true;
-            player.pickable.Add(jarContent.name);
-            Destroy(jarContent);
+
+            if (!player.haveLeftItem)
+            {
+                GameObject organ = Instantiate(PrefabManager.instance.GetOrganPrefab(jarContent.name), player.leftHand);
+                //UIManager.instance.ChangeText(1.5f, UIManager.instance.extraText, $"Press [Q] to drop item");
+                player.haveLeftItem = true;
+                isTaken = true;
+                player.pickable.Add(jarContent.name);
+                Destroy(jarContent);
+            }
         }
     }
 }

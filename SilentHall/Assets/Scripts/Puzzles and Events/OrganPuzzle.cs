@@ -5,34 +5,46 @@ using UnityEngine;
 public class OrganPuzzle : MonoBehaviour, IInteractable
 {
     public string requiredOrgan;
-    public bool haveOrgan = false;
+    string organName;
     public bool organPlaced = false;
     public Transform organPos;
     public string GetInteractionPrompt(GameObject trigger)
     {
         PlayerController player = trigger.GetComponent<PlayerController>();
-        if (player.pickable.Contains(requiredOrgan))
+        if (!organPlaced) 
         {
-            haveOrgan = true;
+            if (player.haveLeftItem)
+            {
+                organName = player.leftHand.GetChild(0).name;
+                string newName = organName.Substring(0, organName.Length - 7);
+                return $"Press [E] to place the {newName}";
+            }
+            return $"Find the needed organ";
         }
-
-        if (haveOrgan) 
-        {
-            return $"Press [E] to place {requiredOrgan}";
-        }
-        return $"Find the needed organ";
+        return " ";
     }
 
     public void OnInteract(GameObject trigger)
     {
         PlayerController player = trigger.GetComponent<PlayerController>();
         PuzzleChecker checker = GetComponentInParent<PuzzleChecker>();
-        if (haveOrgan && !organPlaced)
+        //if (!organPlaced)
+        //{
+        //    GameObject organ = Instantiate(PrefabManager.instance.GetOrganPrefab(requiredOrgan), organPos);
+        //
+        //    player.pickable.Remove(requiredOrgan);
+        //    checker.CheckOrganPuzzle();
+        //}
+        if (player.haveLeftItem && !organPlaced)
         {
-            GameObject organ = Instantiate(PrefabManager.instance.GetOrganPrefab(requiredOrgan), organPos);
-            player.pickable.Remove(requiredOrgan);
-            checker.currentOrgan++;
-            checker.CheckOrganPuzzle();
+            organPlaced = true;
+            UIManager.instance.ClearText(UIManager.instance.interactableText);
+            organName = player.leftHand.GetChild(0).name;
+            string newName = organName.Substring(0, organName.Length - 7);
+            GameObject organ = Instantiate(PrefabManager.instance.GetOrganPrefab(newName), organPos);
+            player.pickable.Remove(newName);
+            player.haveLeftItem = false;
+            Destroy(player.leftHand.GetChild(0).gameObject);
         }
     }
 }
