@@ -15,8 +15,9 @@ public class PrefabManager : MonoBehaviour
     public GameObject leftLungPrefab;
     public GameObject rightLungPrefab;
     public GameObject liverPrefab;
+    public GameObject eyePrefab;
 
-    private Dictionary<string, GameObject> organPrefabs;
+    private Dictionary<string, GameObject> prefabs;
 
     private void Awake()
     {
@@ -25,13 +26,17 @@ public class PrefabManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
 
-            organPrefabs = new Dictionary<string, GameObject>
+            prefabs = new Dictionary<string, GameObject>
             {
+                { "Ecorche", ecorchePrefab },
+                { "Skeleton", skeletonPrefab},
+                { "StMuerte", stmuertePrefab},
                 { "Brain", brainPrefab },
                 { "Heart", heartPrefab },
                 { "Left Lung", leftLungPrefab },
                 { "Right Lung", rightLungPrefab },
-                { "Liver", liverPrefab }
+                { "Liver", liverPrefab },
+                { "Eye", eyePrefab}
             };
         }
         else
@@ -40,9 +45,9 @@ public class PrefabManager : MonoBehaviour
         }
     }
 
-    public GameObject GetOrganPrefab(string organName)
+    public GameObject GetPrefab(string organName)
     {
-        if (organPrefabs.TryGetValue(organName, out GameObject prefab))
+        if (prefabs.TryGetValue(organName, out GameObject prefab))
         {
             return prefab;
         }

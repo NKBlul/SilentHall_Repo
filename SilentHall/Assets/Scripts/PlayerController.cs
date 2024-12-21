@@ -190,7 +190,7 @@ public class PlayerController : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, raycastDist2, eventLayer))
         {
-            Debug.Log("EVENT");
+            Debug.Log($"{hit.collider.gameObject} EVENT");
             IEvent events = hit.collider.GetComponent<IEvent>();
 
             if (events != null)

@@ -2829,7 +2829,7 @@ GameObject:
   - component: {fileID: 3109541629014132154}
   - component: {fileID: 2491981471473460646}
   - component: {fileID: 7767863952810567501}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FLOOR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10009,7 +10009,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -6644916868646126580, guid: 7ea08c8ee9006c74e8db60513f6b493a, type: 3}
 --- !u!1 &8821922176614074658

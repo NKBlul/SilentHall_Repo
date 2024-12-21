@@ -41,7 +41,7 @@ public class OrganPuzzle : MonoBehaviour, IInteractable
             UIManager.instance.ClearText(UIManager.instance.interactableText);
             organName = player.leftHand.GetChild(0).name;
             string newName = organName.Substring(0, organName.Length - 7);
-            GameObject organ = Instantiate(PrefabManager.instance.GetOrganPrefab(newName), organPos);
+            GameObject organ = Instantiate(PrefabManager.instance.GetPrefab(newName), organPos);
             player.pickable.Remove(newName);
             player.haveLeftItem = false;
             Destroy(player.leftHand.GetChild(0).gameObject);

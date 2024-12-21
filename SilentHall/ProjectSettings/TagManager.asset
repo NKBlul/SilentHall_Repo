@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Pickable
   - Interactable
+  - Floor
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -19,7 +21,7 @@ TagManager:
   - Interactable
   - Event
   - NumLock
-  - 
+  - Wall
   - 
   - 
   - 
