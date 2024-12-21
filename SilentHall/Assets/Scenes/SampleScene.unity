@@ -5982,6 +5982,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 269825584663598505, guid: 6b1a7a285ca0b6744917996e71495094, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6440509671420488259, guid: 6b1a7a285ca0b6744917996e71495094, type: 3}
       propertyPath: player
       value: 
@@ -29787,6 +29791,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3547523612046405232, guid: 4bce02562efb8aa46a0a674f47b95539, type: 3}
+      propertyPath: eyePrefab
+      value: 
+      objectReference: {fileID: 9090153535058500910, guid: 6b1a7a285ca0b6744917996e71495094, type: 3}
     - target: {fileID: 3547523612046405232, guid: 4bce02562efb8aa46a0a674f47b95539, type: 3}
       propertyPath: rightLungPrefab
       value: 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PrefabManager : MonoBehaviour
 {
@@ -36,7 +37,7 @@ public class PrefabManager : MonoBehaviour
                 { "Left Lung", leftLungPrefab },
                 { "Right Lung", rightLungPrefab },
                 { "Liver", liverPrefab },
-                { "Eye", eyePrefab}
+                { "Eyes", eyePrefab}
             };
         }
         else
@@ -52,6 +53,60 @@ public class PrefabManager : MonoBehaviour
             return prefab;
         }
         Debug.LogWarning($"Prefab for organ '{organName}' not found!");
+        return null;
+    }
+
+    public GameObject InstantiatePrefab(string prefabName, Vector3 position, Quaternion rotation, Transform parent = null)
+    {
+        // Attempt to retrieve the prefab using the organ name
+        GameObject prefab = GetPrefab(prefabName);
+
+        if (prefab != null)
+        {
+            // Instantiate the prefab at the specified position and rotation
+            return Instantiate(prefab, position, rotation, parent);
+        }
+
+        Debug.LogWarning($"Failed to instantiate prefab for '{prefabName}' because it was not found.");
+        return null;
+    }
+
+    public GameObject InstantiatePrefab(GameObject prefab, Vector3 position, Quaternion rotation, Transform parent = null)
+    {
+
+        if (prefab != null)
+        {
+            // Instantiate the prefab at the specified position and rotation
+            return Instantiate(prefab, position, rotation, parent);
+        }
+
+        Debug.LogWarning($"Failed to instantiate prefab for '{prefab}' because it was not found.");
+        return null;
+    }
+
+    public GameObject InstantiatePrefab(string prefabName, Transform parent)
+    {
+        GameObject prefab = GetPrefab(prefabName);
+
+        if (prefab != null)
+        {
+            // Instantiate the prefab at the specified position and rotation
+            return Instantiate(prefab, parent);
+        }
+
+        Debug.LogWarning($"Failed to instantiate prefab for organ '{prefabName}' because it was not found.");
+        return null;
+    }
+
+    public GameObject InstantiatePrefab(GameObject prefab, Transform parent)
+    {
+        if (prefab != null)
+        {
+            // Instantiate the prefab at the specified position and rotation
+            return Instantiate(prefab, parent);
+        }
+
+        Debug.LogWarning($"Failed to instantiate prefab for '{prefab}' because it was not found.");
         return null;
     }
 }

@@ -51,5 +51,6 @@ MonoBehaviour:
   brainPrefab: {fileID: 4306199533803115613, guid: 2d5d39f6af0a1674ba63726cce07ac87, type: 3}
   heartPrefab: {fileID: 1636783582627205783, guid: b138fc96c110f624ebf0de9f9ffc3ebf, type: 3}
   leftLungPrefab: {fileID: 7170965770491184617, guid: d836fd5062e0a4c4396deb24c016732e, type: 3}
-  RightLungPrefab: {fileID: 627933427051986293, guid: 15d651e5058a52640b934a8bafc49ae1, type: 3}
+  rightLungPrefab: {fileID: 627933427051986293, guid: 15d651e5058a52640b934a8bafc49ae1, type: 3}
   liverPrefab: {fileID: 7557095694292412593, guid: d287b727c1522f04b96a56df913620fb, type: 3}
+  eyePrefab: {fileID: 9090153535058500910, guid: 6b1a7a285ca0b6744917996e71495094, type: 3}

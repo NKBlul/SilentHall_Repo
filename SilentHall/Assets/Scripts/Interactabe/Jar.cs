@@ -30,8 +30,7 @@ public class Jar : MonoBehaviour, IInteractable
 
             if (!player.haveLeftItem)
             {
-                GameObject organ = Instantiate(PrefabManager.instance.GetPrefab(jarContent.name), player.leftHand);
-                //UIManager.instance.ChangeText(1.5f, UIManager.instance.extraText, $"Press [Q] to drop item");
+                PrefabManager.instance.InstantiatePrefab(jarContent.name, player.leftHand);
                 player.haveLeftItem = true;
                 isTaken = true;
                 player.pickable.Add(jarContent.name);
