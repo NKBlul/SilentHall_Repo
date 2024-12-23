@@ -19,6 +19,7 @@ public class Flashlight : MonoBehaviour, IUseable, IInteractable
         if (player != null)
         {
             player.Pickup(gameObject, player.rightHand); // Call the Pickup method on the player and pass the flashlight as the object to pick up
+            player.haveRightItem = true;
             GetComponent<Rigidbody>().isKinematic = true;
             transform.localPosition = Vector3.zero;
             transform.localRotation = Quaternion.identity;

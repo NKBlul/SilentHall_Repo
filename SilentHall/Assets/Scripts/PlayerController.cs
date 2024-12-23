@@ -1,4 +1,3 @@
-using Palmmedia.ReportGenerator.Core.CodeAnalysis;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +6,7 @@ public class PlayerController : MonoBehaviour
     [Header("References: ")]
     [SerializeField] Rigidbody rb;
     [SerializeField] Camera cam;
+    [SerializeField] Animator animator;
 
     [Header("Movement: ")]
     [SerializeField] Vector3 move;
@@ -41,9 +41,13 @@ public class PlayerController : MonoBehaviour
     [Header("Pickable: ")]
     public Transform rightHand;
     public Transform leftHand;
-    bool haveRightItem = false;
+    public bool haveRightItem = false;
     public bool haveLeftItem = false;
     public List<string> pickable = new List<string>();
+
+    [Header("Crouching")]
+    bool isCrouching;
+    float crouchSpeed;
 
     void Start()
     {
@@ -80,6 +84,8 @@ public class PlayerController : MonoBehaviour
             Drop();
         }
         RegenStamina();
+        UpdateAnimator();
+        Crouch();
     }
 
     private void FixedUpdate()
@@ -91,10 +97,32 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void UpdateAnimator()
+    {
+        float speed = move.magnitude;
+        animator.SetFloat("Speed", speed);
+
+        // Update the running state parameter
+        animator.SetBool("IsRunning", isRunning);
+        animator.SetBool("IsCrouching", isCrouching);
+    }
+
     void GetInput()
     {
         move = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
         look = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y")) * sensitivity;
+    }
+
+    void Crouch()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            isCrouching = true;
+        }
+        else if (Input.GetKeyUp(KeyCode.LeftControl))
+        {
+            isCrouching = false;
+        }
     }
 
     void Walk()
