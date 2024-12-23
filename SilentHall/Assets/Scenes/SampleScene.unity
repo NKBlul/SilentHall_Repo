@@ -9914,6 +9914,7 @@ MonoBehaviour:
   rb: {fileID: 604880145}
   cam: {fileID: 963194227}
   animator: {fileID: 1628198328}
+  capsuleCollider: {fileID: 0}
   move: {x: 0, y: 0, z: 0}
   walkingSpeed: 2
   runningSpeed: 4
@@ -9940,6 +9941,10 @@ MonoBehaviour:
   haveRightItem: 0
   haveLeftItem: 0
   pickable: []
+  crouchHeight: 1
+  standHeight: 2
+  crouchTransitionSpeed: 5
+  cameraCrouchOffset: {x: 0, y: -0.5, z: 0}
 --- !u!54 &604880145
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14755,7 +14760,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.71, z: 0.15}
+  m_LocalPosition: {x: 0, y: 1.71, z: 0.07399216}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -22866,6 +22871,7 @@ MonoBehaviour:
   rb: {fileID: 1628198331}
   cam: {fileID: 963194227}
   animator: {fileID: 1628198328}
+  capsuleCollider: {fileID: 1628198330}
   move: {x: 0, y: 0, z: 0}
   walkingSpeed: 2
   runningSpeed: 4
@@ -22892,6 +22898,10 @@ MonoBehaviour:
   haveRightItem: 0
   haveLeftItem: 0
   pickable: []
+  crouchHeight: 1
+  standHeight: 2
+  crouchTransitionSpeed: 5
+  cameraCrouchOffset: {x: 0, y: -0.65, z: 0.65}
 --- !u!1 &1643271985
 GameObject:
   m_ObjectHideFlags: 0

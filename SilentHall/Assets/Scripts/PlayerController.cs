@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Rigidbody rb;
     [SerializeField] Camera cam;
     [SerializeField] Animator animator;
+    [SerializeField] CapsuleCollider capsuleCollider;
+
 
     [Header("Movement: ")]
     [SerializeField] Vector3 move;
@@ -47,13 +49,19 @@ public class PlayerController : MonoBehaviour
 
     [Header("Crouching")]
     bool isCrouching;
-    float crouchSpeed;
+    float crouchSpeed = 1.5f;
+    public float crouchHeight = 1f;
+    public float standHeight = 2f;
+    public float crouchTransitionSpeed = 5f;
+    private Vector3 cameraDefaultPosition;
+    public Vector3 cameraCrouchOffset = new Vector3(0, -0.5f, 0);
 
     void Start()
     {
         currentStamina = maxStamina;
         UIManager.instance.UpdateStaminaBar(currentStamina, maxStamina);
         UIManager.instance.ActivateStamina(false);
+        cameraDefaultPosition = cam.transform.localPosition;
     }
 
     void Update()
@@ -118,11 +126,19 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
             isCrouching = true;
+            capsuleCollider.height = crouchHeight;
+            capsuleCollider.center = new Vector3(0, crouchHeight / 2, 0);
         }
         else if (Input.GetKeyUp(KeyCode.LeftControl))
         {
             isCrouching = false;
+            capsuleCollider.height = standHeight;
+            capsuleCollider.center = new Vector3(0, standHeight / 2, 0);
         }
+
+        // Smoothly transition the camera position
+        Vector3 targetPosition = isCrouching ? cameraDefaultPosition + cameraCrouchOffset : cameraDefaultPosition;
+        cam.transform.localPosition = Vector3.Lerp(cam.transform.localPosition, targetPosition, Time.deltaTime * crouchTransitionSpeed);
     }
 
     void Walk()
@@ -143,7 +159,7 @@ public class PlayerController : MonoBehaviour
         Vector3 desiredMoveDirection = forward * move.z + right * move.x;
 
         // Apply movement speed
-        if (Input.GetKey(KeyCode.LeftShift) && currentStamina > 0)
+        if (Input.GetKey(KeyCode.LeftShift) && currentStamina > 0 && !isCrouching)
         {
             isRunning = true;
             currentStamina -= staminaDrainRate * Time.fixedDeltaTime;
@@ -153,6 +169,10 @@ public class PlayerController : MonoBehaviour
             rb.MovePosition(rb.position + desiredMoveDirection * runningSpeed * Time.fixedDeltaTime);
             staminaRegenTimer = 0f;
             //Debug.Log($"Current Stamina: {currentStamina}");
+        }
+        else if (isCrouching)
+        {
+            rb.MovePosition(rb.position + desiredMoveDirection * (crouchSpeed) * Time.fixedDeltaTime);
         }
         else if (currentStamina <= 0) // Stamina depleted
         {
