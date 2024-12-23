@@ -5,6 +5,7 @@ using UnityEngine;
 public class Jar : MonoBehaviour, IInteractable
 {
     public GameObject jarContent;
+    public string contentName;
     bool isTaken = false;
 
     public string GetInteractionPrompt(GameObject trigger)
@@ -34,8 +35,17 @@ public class Jar : MonoBehaviour, IInteractable
                 player.haveLeftItem = true;
                 isTaken = true;
                 player.pickable.Add(jarContent.name);
-                Destroy(jarContent);
+                jarContent.SetActive(false);
             }
+        }
+    }
+
+    public void ResetJar()
+    {
+        if (isTaken)
+        {
+            jarContent.SetActive(true);
+            isTaken = false;
         }
     }
 }

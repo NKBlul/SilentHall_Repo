@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 [System.Serializable]
 public class Sound
@@ -19,6 +20,7 @@ public class AudioManager : MonoBehaviour
 
     public AudioSource musicSource, sfxSource;
     public Sound[] musicSounds, sfxSounds;
+    public AudioMixerGroup musicMixer, sfxMixer;
 
     private void Awake()
     {
@@ -67,7 +69,77 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void PlaySFXAtPosition(string name, Vector3 position, float range)
+    public void PlayMusicAtPosition(string name, Vector3 position, float minRange, float maxRange, float spatialBlend)
+    {
+        Sound s = Array.Find(musicSounds, x => x.name == name);
+        if (s != null)
+        {
+            // Use the prefab manager to instantiate a preconfigured audio source
+            GameObject audioObject = Instantiate(PrefabManager.instance.tempAudioPrefab, position, Quaternion.identity);
+            AudioSource audioSource = audioObject.GetComponent<AudioSource>();
+
+            if (audioSource != null)
+            {
+                audioSource.clip = s.clip;
+                audioSource.outputAudioMixerGroup = musicMixer;
+                audioSource.volume = s.volume;
+                audioSource.minDistance = minRange;
+                audioSource.maxDistance = maxRange;
+                audioSource.loop = s.loop;
+                audioSource.spatialBlend = spatialBlend;
+                audioSource.playOnAwake = true;
+                audioSource.Play();
+
+                //// Destroy after the clip finishes playing
+                //Destroy(audioObject, s.clip.length);
+            }
+            else
+            {
+                Debug.LogError("Audio source prefab is missing an AudioSource component!");
+            }
+        }
+        else
+        {
+            Debug.LogWarning($"SFX with name {name} not found!");
+        }
+    }
+
+    public void PlayMusicAtPosition(string name, Transform parent, float minRange, float maxRange, float spatialBlend)
+    {
+        Sound s = Array.Find(musicSounds, x => x.name == name);
+        if (s != null)
+        {
+            // Use the prefab manager to instantiate a preconfigured audio source
+            GameObject audioObject = Instantiate(PrefabManager.instance.tempAudioPrefab, parent);
+            AudioSource audioSource = audioObject.GetComponent<AudioSource>();
+
+            if (audioSource != null)
+            {
+                audioSource.clip = s.clip;
+                audioSource.outputAudioMixerGroup = musicMixer;
+                audioSource.volume = s.volume;
+                audioSource.minDistance = minRange;
+                audioSource.maxDistance = maxRange;
+                audioSource.loop = s.loop;
+                audioSource.spatialBlend = spatialBlend;
+                audioSource.playOnAwake = true;
+                audioSource.Play();
+
+                //// Destroy after the clip finishes playing
+                //Destroy(audioObject, s.clip.length);
+            }
+            else
+            {
+                Debug.LogError("Audio source prefab is missing an AudioSource component!");
+            }
+        }
+        else
+        {
+            Debug.LogWarning($"SFX with name {name} not found!");
+        }
+    }
+
+    public void PlaySFXAtPosition(string name, Vector3 position, float minRange, float maxRange)
     {
         Sound s = Array.Find(sfxSounds, x => x.name == name);
         if (s != null)
@@ -79,9 +151,42 @@ public class AudioManager : MonoBehaviour
             if (audioSource != null)
             {
                 audioSource.clip = s.clip;
+                audioSource.outputAudioMixerGroup = sfxMixer;
                 audioSource.volume = s.volume;
-                audioSource.minDistance = range;
-                audioSource.maxDistance = range * 2f;
+                audioSource.minDistance = minRange;
+                audioSource.maxDistance = maxRange;
+                audioSource.Play();
+
+                // Destroy after the clip finishes playing
+                Destroy(audioObject, s.clip.length);
+            }
+            else
+            {
+                Debug.LogError("Audio source prefab is missing an AudioSource component!");
+            }
+        }
+        else
+        {
+            Debug.LogWarning($"SFX with name {name} not found!");
+        }
+    }
+
+    public void PlaySFXAtPosition(string name, Transform parent, float minRange, float maxRange)
+    {
+        Sound s = Array.Find(sfxSounds, x => x.name == name);
+        if (s != null)
+        {
+            // Use the prefab manager to instantiate a preconfigured audio source
+            GameObject audioObject = Instantiate(PrefabManager.instance.tempAudioPrefab, parent);
+            AudioSource audioSource = audioObject.GetComponent<AudioSource>();
+
+            if (audioSource != null)
+            {
+                audioSource.clip = s.clip;
+                audioSource.outputAudioMixerGroup = sfxMixer;
+                audioSource.volume = s.volume;
+                audioSource.minDistance = minRange;
+                audioSource.maxDistance = maxRange;
                 audioSource.Play();
 
                 // Destroy after the clip finishes playing

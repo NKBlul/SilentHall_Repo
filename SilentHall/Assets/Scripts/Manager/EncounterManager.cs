@@ -31,6 +31,7 @@ public class EncounterManager : MonoBehaviour
                 Destroy(triggers);
                 break;
             case "event 3":
+                AudioManager.instance.PlayMusicAtPosition("creepyPiano", new Vector3(-44, 1, -14f), 1, 5, 1);
                 break;
             case "event 4":
                 break;

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EncounterZone : MonoBehaviour
+public class TempEncounterZone : MonoBehaviour
 {
     public string eventName;
     public bool hasTriggered = false;
@@ -14,6 +14,7 @@ public class EncounterZone : MonoBehaviour
         {
             hasTriggered = true;
             EncounterManager.instance.TriggerEvent(eventName, triggers);
+            Destroy(gameObject);
         }
     }
 }

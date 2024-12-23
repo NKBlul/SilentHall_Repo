@@ -54,3 +54,5 @@ MonoBehaviour:
   rightLungPrefab: {fileID: 627933427051986293, guid: 15d651e5058a52640b934a8bafc49ae1, type: 3}
   liverPrefab: {fileID: 7557095694292412593, guid: d287b727c1522f04b96a56df913620fb, type: 3}
   eyePrefab: {fileID: 9090153535058500910, guid: 6b1a7a285ca0b6744917996e71495094, type: 3}
+  stomachPrefab: {fileID: 4143227264730337662, guid: 0bc382379842ac84695cd46eca00da7d, type: 3}
+  intestinePrefab: {fileID: 3127608299889309517, guid: 5ccb5af70e91c4941afb3f584b693f56, type: 3}

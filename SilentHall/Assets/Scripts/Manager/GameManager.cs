@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public GameObject player;
     public PlayerController playerRef;
 
+    public Transform checkPoint;
     private void Awake()
     {
         if (instance == null)

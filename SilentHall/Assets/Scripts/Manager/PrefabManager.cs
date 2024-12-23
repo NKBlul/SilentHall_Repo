@@ -17,6 +17,9 @@ public class PrefabManager : MonoBehaviour
     public GameObject rightLungPrefab;
     public GameObject liverPrefab;
     public GameObject eyePrefab;
+    public GameObject stomachPrefab;
+    public GameObject intestinePrefab;
+    public GameObject tempEncounterZonePrefab;
 
     private Dictionary<string, GameObject> prefabs;
 
@@ -37,7 +40,11 @@ public class PrefabManager : MonoBehaviour
                 { "Left Lung", leftLungPrefab },
                 { "Right Lung", rightLungPrefab },
                 { "Liver", liverPrefab },
-                { "Eyes", eyePrefab}
+                { "Eyes", eyePrefab},
+                { "Stomach", stomachPrefab},
+                { "Intestine", intestinePrefab},
+                { "TempEnc", tempEncounterZonePrefab},
+                { "TempAudio", tempAudioPrefab},
             };
         }
         else
