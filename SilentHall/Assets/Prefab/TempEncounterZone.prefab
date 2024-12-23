@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8056384839594241609}
   - component: {fileID: 2793900968337435472}
+  - component: {fileID: 3957505434999128931}
   m_Layer: 0
   m_Name: TempEncounterZone
   m_TagString: Untagged
@@ -53,3 +54,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4.047352, y: 1, z: 2.1399899}
   m_Center: {x: 0.15695, y: 0, z: -0.5699949}
+--- !u!114 &3957505434999128931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2501669071746588358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc3f0515639660c46af807dff9cad280, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: event 3
+  hasTriggered: 0
+  triggers: {fileID: 2501669071746588358}

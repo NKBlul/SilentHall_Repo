@@ -25,6 +25,10 @@ sink: "Bathroom sink and cabinet" (https://skfb.ly/pqx6D) by neverfollow81 is li
 rusty key: "Old Rusty Key" (https://skfb.ly/p7Y6P) by Alex Krush is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 Brain: "Human Brain" (https://skfb.ly/6ZRHv) by 3DRT STUDIOS is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 Heart: "Realistic Human Heart" (https://skfb.ly/oyBCT) by neshallads is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+fantasma: "fantasma animado" (https://skfb.ly/6WZxv) by vicente betoret ferrero is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+ghost: "Ghost" (https://skfb.ly/oDszX) by Vitaliy Melnikov is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+ouija: "Lowpoly ouija board with props" (https://skfb.ly/oSqJu) by n-malmberg is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+player: "Raju Talking Standing" (https://skfb.ly/oN8Yq) by faizalramlan is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 
 
 ==========Audio==========

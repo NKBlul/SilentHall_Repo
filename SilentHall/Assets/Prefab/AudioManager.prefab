@@ -178,6 +178,8 @@ MonoBehaviour:
   sfxSource: {fileID: 6288026752531657789}
   musicSounds: []
   sfxSounds: []
+  musicMixer: {fileID: -5583822044031956012, guid: ae8b909bef4a9c64ea3c709e12ca5f1b, type: 2}
+  sfxMixer: {fileID: 5770072301582134725, guid: ae8b909bef4a9c64ea3c709e12ca5f1b, type: 2}
 --- !u!1 &5645602375597304547
 GameObject:
   m_ObjectHideFlags: 0
