@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class EncounterManager : MonoBehaviour
+public class EventManager : MonoBehaviour
 {
-    public static EncounterManager instance;
+    public static EventManager instance;
 
     private void Awake()
     {

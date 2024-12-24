@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,7 +8,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Rigidbody rb;
     [SerializeField] Camera cam;
     [SerializeField] Animator animator;
-    [SerializeField] CapsuleCollider capsuleCollider;
+    [SerializeField] BoxCollider boxCollider;
 
 
     [Header("Movement: ")]
@@ -50,18 +51,21 @@ public class PlayerController : MonoBehaviour
     [Header("Crouching")]
     bool isCrouching;
     float crouchSpeed = 1.5f;
-    public float crouchHeight = 1f;
-    public float standHeight = 2f;
+    public Vector3 originalColliderSize;
+    public Vector3 crouchColliderSize;
+    public Vector3 originalColliderPos;
+    public Vector3 crouchColliderPos;
     public float crouchTransitionSpeed = 5f;
-    private Vector3 cameraDefaultPosition;
-    public Vector3 cameraCrouchOffset = new Vector3(0, -0.5f, 0);
-
+    public Vector3 cameraDefaultPosition;
+    public Vector3 cameraCrouchPosition;
     void Start()
     {
         currentStamina = maxStamina;
         UIManager.instance.UpdateStaminaBar(currentStamina, maxStamina);
         UIManager.instance.ActivateStamina(false);
         cameraDefaultPosition = cam.transform.localPosition;
+        originalColliderSize = boxCollider.size;
+        originalColliderPos = boxCollider.center;
     }
 
     void Update()
@@ -107,10 +111,15 @@ public class PlayerController : MonoBehaviour
 
     void UpdateAnimator()
     {
+        if (!canMove)
+        {
+            animator.SetFloat("Speed", 0);
+            animator.SetBool("IsRunning", false);
+            animator.SetBool("IsCrouching", false);
+            return;
+        }
         float speed = move.magnitude;
         animator.SetFloat("Speed", speed);
-
-        // Update the running state parameter
         animator.SetBool("IsRunning", isRunning);
         animator.SetBool("IsCrouching", isCrouching);
     }
@@ -126,19 +135,40 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
             isCrouching = true;
-            capsuleCollider.height = crouchHeight;
-            capsuleCollider.center = new Vector3(0, crouchHeight / 2, 0);
+            boxCollider.center = crouchColliderPos;
+            boxCollider.size = crouchColliderSize;
+            StopAllCoroutines(); // Stop any ongoing camera movement coroutines
+            StartCoroutine(TransitionCameraPosition(cameraCrouchPosition));
         }
         else if (Input.GetKeyUp(KeyCode.LeftControl))
         {
             isCrouching = false;
-            capsuleCollider.height = standHeight;
-            capsuleCollider.center = new Vector3(0, standHeight / 2, 0);
+            boxCollider.center = originalColliderPos;
+            boxCollider.size = originalColliderSize;
+            StopAllCoroutines(); // Stop any ongoing camera movement coroutines
+            StartCoroutine(TransitionCameraPosition(cameraDefaultPosition));
         }
 
-        // Smoothly transition the camera position
-        Vector3 targetPosition = isCrouching ? cameraDefaultPosition + cameraCrouchOffset : cameraDefaultPosition;
-        cam.transform.localPosition = Vector3.Lerp(cam.transform.localPosition, targetPosition, Time.deltaTime * crouchTransitionSpeed);
+        //// Smoothly transition the camera position
+        //Vector3 targetPosition = isCrouching ? cameraCrouchPosition : cameraDefaultPosition;
+        //cam.transform.localPosition = Vector3.Lerp(cam.transform.localPosition, targetPosition, Time.deltaTime * crouchTransitionSpeed);
+    }
+
+    private IEnumerator TransitionCameraPosition(Vector3 targetPosition)
+    {
+        Vector3 startPosition = cam.transform.localPosition;
+        float elapsedTime = 0f;
+        float transitionDuration = 0.5f; // Adjust this value for transition speed
+
+        while (elapsedTime < transitionDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            cam.transform.localPosition = Vector3.Lerp(startPosition, targetPosition, elapsedTime / transitionDuration);
+            yield return null;
+        }
+
+        // Ensure the final position is exactly the target position
+        cam.transform.localPosition = targetPosition;
     }
 
     void Walk()
@@ -159,7 +189,7 @@ public class PlayerController : MonoBehaviour
         Vector3 desiredMoveDirection = forward * move.z + right * move.x;
 
         // Apply movement speed
-        if (Input.GetKey(KeyCode.LeftShift) && currentStamina > 0 && !isCrouching)
+        if (Input.GetKey(KeyCode.LeftShift) && currentStamina > 0 && !isCrouching && move.magnitude > 0.01f)
         {
             isRunning = true;
             currentStamina -= staminaDrainRate * Time.fixedDeltaTime;

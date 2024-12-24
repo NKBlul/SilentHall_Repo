@@ -9914,7 +9914,7 @@ MonoBehaviour:
   rb: {fileID: 604880145}
   cam: {fileID: 963194227}
   animator: {fileID: 1628198328}
-  capsuleCollider: {fileID: 0}
+  boxCollider: {fileID: 0}
   move: {x: 0, y: 0, z: 0}
   walkingSpeed: 2
   runningSpeed: 4
@@ -9941,10 +9941,13 @@ MonoBehaviour:
   haveRightItem: 0
   haveLeftItem: 0
   pickable: []
-  crouchHeight: 1
-  standHeight: 2
+  originalColliderSize: {x: 0, y: 0, z: 0}
+  crouchColliderSize: {x: 0, y: 0, z: 0}
+  originalColliderPos: {x: 0, y: 0, z: 0}
+  crouchColliderPos: {x: 0, y: 0, z: 0}
   crouchTransitionSpeed: 5
-  cameraCrouchOffset: {x: 0, y: -0.5, z: 0}
+  cameraDefaultPosition: {x: 0, y: 0, z: 0}
+  cameraCrouchPosition: {x: 0, y: 0, z: 0}
 --- !u!54 &604880145
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14760,7 +14763,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.71, z: 0.07399216}
+  m_LocalPosition: {x: 0, y: 1.71, z: 0.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -22773,7 +22776,7 @@ PrefabInstance:
       addedObject: {fileID: 1628198331}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c390d211c75f2c6429f6238b12161c72, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1628198330}
+      addedObject: {fileID: 1628198333}
   m_SourcePrefab: {fileID: 100100000, guid: c390d211c75f2c6429f6238b12161c72, type: 3}
 --- !u!1 &1628198327 stripped
 GameObject:
@@ -22806,29 +22809,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c390d211c75f2c6429f6238b12161c72, type: 3}
   m_PrefabInstance: {fileID: 1628198326}
   m_PrefabAsset: {fileID: 0}
---- !u!136 &1628198330
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1628198327}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.9, z: 0}
 --- !u!54 &1628198331
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -22871,7 +22851,7 @@ MonoBehaviour:
   rb: {fileID: 1628198331}
   cam: {fileID: 963194227}
   animator: {fileID: 1628198328}
-  capsuleCollider: {fileID: 1628198330}
+  boxCollider: {fileID: 1628198333}
   move: {x: 0, y: 0, z: 0}
   walkingSpeed: 2
   runningSpeed: 4
@@ -22884,7 +22864,7 @@ MonoBehaviour:
   staminaRegenTimer: 0
   look: {x: 0, y: 0}
   sensitivity: 3
-  verticalRotationLimit: 80
+  verticalRotationLimit: 55
   raycastDist: 1.5
   raycastDist2: 8.5
   interactableLayer:
@@ -22898,10 +22878,34 @@ MonoBehaviour:
   haveRightItem: 0
   haveLeftItem: 0
   pickable: []
-  crouchHeight: 1
-  standHeight: 2
+  originalColliderSize: {x: 0, y: 0, z: 0}
+  crouchColliderSize: {x: 0.5, y: 1, z: 1}
+  originalColliderPos: {x: 0, y: 0, z: 0}
+  crouchColliderPos: {x: 0, y: 0.5, z: 0.3}
   crouchTransitionSpeed: 5
-  cameraCrouchOffset: {x: 0, y: -0.65, z: 0.65}
+  cameraDefaultPosition: {x: 0, y: 0, z: 0}
+  cameraCrouchPosition: {x: 0, y: 0.9, z: 0.5}
+--- !u!65 &1628198333
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1628198327}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.5, y: 1.8, z: 1.2}
+  m_Center: {x: 0, y: 0.9, z: 0}
 --- !u!1 &1643271985
 GameObject:
   m_ObjectHideFlags: 0
@@ -31587,11 +31591,11 @@ PrefabInstance:
     - target: {fileID: 9024891632668610488, guid: 04b29634fe916b041be98e03269cad1d, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 604880139}
+      objectReference: {fileID: 1628198327}
     - target: {fileID: 9024891632668610488, guid: 04b29634fe916b041be98e03269cad1d, type: 3}
       propertyPath: playerRef
       value: 
-      objectReference: {fileID: 604880144}
+      objectReference: {fileID: 1628198332}
     - target: {fileID: 9024891632668610488, guid: 04b29634fe916b041be98e03269cad1d, type: 3}
       propertyPath: checkPoint
       value: 

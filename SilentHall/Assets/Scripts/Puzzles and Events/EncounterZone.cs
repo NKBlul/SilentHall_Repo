@@ -13,7 +13,7 @@ public class EncounterZone : MonoBehaviour
         if (other.CompareTag("Player") && !hasTriggered)
         {
             hasTriggered = true;
-            EncounterManager.instance.TriggerEvent(eventName, triggers);
+            EventManager.instance.TriggerEvent(eventName, triggers);
         }
     }
 }
