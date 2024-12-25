@@ -12,7 +12,7 @@ public class LookEvent : MonoBehaviour, IEvent
     {
         if (!hasTriggered) 
         {
-            EncounterManager.instance.TriggerEvent(eventName, triggers);
+            EventManager.instance.TriggerEvent(eventName, triggers);
             hasTriggered = true;
         }
     }
