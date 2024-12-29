@@ -29,6 +29,8 @@ fantasma: "fantasma animado" (https://skfb.ly/6WZxv) by vicente betoret ferrero 
 ghost: "Ghost" (https://skfb.ly/oDszX) by Vitaliy Melnikov is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 ouija: "Lowpoly ouija board with props" (https://skfb.ly/oSqJu) by n-malmberg is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 player: "Raju Talking Standing" (https://skfb.ly/oN8Yq) by faizalramlan is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+kuntilanak: "Kuntilanak_Indonesian ghost" (https://skfb.ly/o9qJv) by udi_kreasindo3D is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+pocong: "pocong for game" (https://skfb.ly/oVEL6) by fadilaagrilla03 is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 
 
 ==========Audio==========
