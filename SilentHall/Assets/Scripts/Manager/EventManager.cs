@@ -25,7 +25,7 @@ public class EventManager : MonoBehaviour
         switch (eventName) 
         {
             case "event 1":
-                GameObject stmuerte = Instantiate(PrefabManager.instance.stmuertePrefab, triggers.transform);
+                CutsceneManager.instance.PlayCutscene("cutscene 1");
                 break;
             case "event 2":
                 Destroy(triggers);
