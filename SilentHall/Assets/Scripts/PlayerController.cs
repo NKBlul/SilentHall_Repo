@@ -114,14 +114,30 @@ public class PlayerController : MonoBehaviour
         if (!canMove)
         {
             animator.SetFloat("Speed", 0);
-            animator.SetBool("IsRunning", false);
+            //animator.SetBool("IsRunning", false);
             animator.SetBool("IsCrouching", false);
             return;
         }
-        float speed = move.magnitude;
-        animator.SetFloat("Speed", speed);
-        animator.SetBool("IsRunning", isRunning);
-        animator.SetBool("IsCrouching", isCrouching);
+        // Calculate speed based on the current movement state
+        float speed = move.magnitude * (isRunning ? runningSpeed : (isCrouching ? crouchSpeed : walkingSpeed));
+        animator.SetFloat("Speed", speed);        // For blend tree
+        //animator.SetBool("IsRunning", isRunning); // For additional animations
+        animator.SetBool("IsCrouching", isCrouching); // For crouch state
+        if (isCrouching)
+        {
+            if (speed > 0.1f) // Crouch walking
+            {
+                animator.SetFloat("CrouchBlend", 1); // Blend to CrouchWalk
+            }
+            else // Idle crouch
+            {
+                animator.SetFloat("CrouchBlend", 0); // Blend to StandToCrouch
+            }
+        }
+        else
+        {
+            animator.SetFloat("CrouchBlend", 2); // Blend to CrouchToStand
+        }
     }
 
     void GetInput()
@@ -220,6 +236,7 @@ public class PlayerController : MonoBehaviour
             rb.MovePosition(rb.position + desiredMoveDirection * walkingSpeed * Time.fixedDeltaTime);
             UIManager.instance.ActivateStamina(false);
         }
+
         cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, isRunning ? 75 : 60, Time.deltaTime * 10f);
     }
 
