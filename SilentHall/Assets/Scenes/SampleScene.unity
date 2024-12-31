@@ -31736,7 +31736,7 @@ PrefabInstance:
     - target: {fileID: 5871614124470750832, guid: b1591b047168bab42a92c627b92a47ea, type: 3}
       propertyPath: m_PlayableAsset
       value: 
-      objectReference: {fileID: 11400000, guid: ce8e76ec0016da94f86bac4794a5386e, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 5871614124470750832, guid: b1591b047168bab42a92c627b92a47ea, type: 3}
       propertyPath: m_SceneBindings.Array.size
       value: 12
