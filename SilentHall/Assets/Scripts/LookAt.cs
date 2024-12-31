@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+[RequireComponent(typeof(BoxCollider))]
 public class LookAt : MonoBehaviour
 {
     public Transform player; // The player transform
