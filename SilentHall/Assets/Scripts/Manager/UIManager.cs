@@ -52,6 +52,14 @@ public class UIManager : MonoBehaviour
         text.text = newText;
     }
 
+    public void ChangeText(TextMeshProUGUI text, PaperData paperData)
+    {
+        text.enableAutoSizing = true;
+        text.fontSizeMin = 1;
+        text.fontSizeMax = 5;
+        text.text = paperData.paperText;
+    }
+
     public void ChangeText(float time, TextMeshProUGUI text, string newText)
     {
         text.text = newText;
@@ -79,7 +87,7 @@ public class UIManager : MonoBehaviour
         GameManager.instance.TogglePlayerMovement(false);
         GameManager.instance.ShowCursor();
         paper.SetActive(true);
-        ChangeText(paperText, paperData.paperText);
+        ChangeText(paperText, paperData);
     }
 
     public void Close(GameObject toClose)

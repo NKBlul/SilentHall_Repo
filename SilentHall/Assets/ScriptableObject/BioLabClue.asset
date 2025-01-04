@@ -12,4 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c85d4a9318eec9d499f4f831c9e55fd8, type: 3}
   m_Name: BioLabClue
   m_EditorClassIdentifier: 
-  paperText: some math equation
+  paperText: '1. How many chambers does the human heart have?
+
+    2. How many unique
+    pairing exist for ''A'' DNA molecule?
+
+    3. How many set/s of chromosomes does
+    a human inherit from each parent?'
