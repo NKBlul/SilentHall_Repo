@@ -95,6 +95,12 @@ public class PlayerController : MonoBehaviour
         {
             Drop();
         }
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            GameManager.instance.TogglePlayerMovement(false);
+            GameManager.instance.ShowCursor();
+            UIManager.instance.pianoUI.SetActive(true);
+        }
         RegenStamina();
         UpdateAnimator();
         Crouch();

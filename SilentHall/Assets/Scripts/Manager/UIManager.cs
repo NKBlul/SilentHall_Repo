@@ -31,6 +31,9 @@ public class UIManager : MonoBehaviour
     public GameObject numlockUI3d;
     public Vector3 offset;
 
+    [Header("Piano")]
+    public GameObject pianoUI;
+
     private void Awake()
     {
         if (instance == null)

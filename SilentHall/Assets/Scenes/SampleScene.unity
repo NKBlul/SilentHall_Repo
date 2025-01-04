@@ -1969,7 +1969,7 @@ GameObject:
   - component: {fileID: 93054099}
   - component: {fileID: 93054098}
   m_Layer: 5
-  m_Name: Button (20)
+  m_Name: Up B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1992,7 +1992,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 274.60733, y: 0}
+  m_AnchoredPosition: {x: 275, y: 0}
   m_SizeDelta: {x: 50, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &93054098
@@ -3654,7 +3654,7 @@ GameObject:
   - component: {fileID: 114566633}
   - component: {fileID: 114566632}
   m_Layer: 5
-  m_Name: Button (22)
+  m_Name: Up Fs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3677,7 +3677,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 149.60733, y: 71.20419}
+  m_AnchoredPosition: {x: 150, y: 71.20419}
   m_SizeDelta: {x: 40, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &114566632
@@ -4762,7 +4762,7 @@ GameObject:
   - component: {fileID: 171966617}
   - component: {fileID: 171966616}
   m_Layer: 5
-  m_Name: Button (21)
+  m_Name: Up Cs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4785,7 +4785,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.39266968, y: 71.20419}
+  m_AnchoredPosition: {x: 0, y: 71.20419}
   m_SizeDelta: {x: 40, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &171966616
@@ -6041,7 +6041,7 @@ GameObject:
   - component: {fileID: 271294529}
   - component: {fileID: 271294528}
   m_Layer: 5
-  m_Name: Button (8)
+  m_Name: Low B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8666,7 +8666,7 @@ GameObject:
   - component: {fileID: 451482574}
   - component: {fileID: 451482573}
   m_Layer: 5
-  m_Name: Button (5)
+  m_Name: Low Ds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9804,7 +9804,7 @@ GameObject:
   - component: {fileID: 551192228}
   - component: {fileID: 551192227}
   m_Layer: 5
-  m_Name: Button (10)
+  m_Name: Low Gs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10317,7 +10317,7 @@ GameObject:
   - component: {fileID: 570572135}
   - component: {fileID: 570572134}
   m_Layer: 5
-  m_Name: Button (14)
+  m_Name: Up A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10340,7 +10340,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 224.60733, y: 0}
+  m_AnchoredPosition: {x: 225, y: 0}
   m_SizeDelta: {x: 50, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &570572134
@@ -12378,7 +12378,7 @@ GameObject:
   - component: {fileID: 632919551}
   - component: {fileID: 632919550}
   m_Layer: 5
-  m_Name: Button (18)
+  m_Name: Up E
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12401,7 +12401,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 74.60733, y: 0}
+  m_AnchoredPosition: {x: 75, y: 0}
   m_SizeDelta: {x: 50, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &632919550
@@ -13671,7 +13671,7 @@ GameObject:
   - component: {fileID: 695027553}
   - component: {fileID: 695027552}
   m_Layer: 5
-  m_Name: Button (12)
+  m_Name: Up D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13694,7 +13694,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 24.60733, y: 0}
+  m_AnchoredPosition: {x: 25, y: 0}
   m_SizeDelta: {x: 50, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &695027552
@@ -15862,7 +15862,7 @@ GameObject:
   - component: {fileID: 855098325}
   - component: {fileID: 855098324}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: Low E
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16569,7 +16569,7 @@ GameObject:
   - component: {fileID: 927953084}
   - component: {fileID: 927953083}
   m_Layer: 5
-  m_Name: Button (7)
+  m_Name: Low A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17960,7 +17960,7 @@ GameObject:
   - component: {fileID: 995598689}
   - component: {fileID: 995598688}
   m_Layer: 5
-  m_Name: Button (13)
+  m_Name: Up F
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17983,7 +17983,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 124.60733, y: 0}
+  m_AnchoredPosition: {x: 125, y: 0}
   m_SizeDelta: {x: 50, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &995598688
@@ -18822,7 +18822,7 @@ GameObject:
   - component: {fileID: 1064838936}
   - component: {fileID: 1064838935}
   m_Layer: 5
-  m_Name: Button (4)
+  m_Name: Low Cs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20217,7 +20217,7 @@ GameObject:
   - component: {fileID: 1152662744}
   - component: {fileID: 1152662743}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: Low F
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20338,7 +20338,7 @@ GameObject:
   - component: {fileID: 1155399398}
   - component: {fileID: 1155399397}
   m_Layer: 5
-  m_Name: Button (11)
+  m_Name: Low As
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21178,7 +21178,7 @@ GameObject:
   - component: {fileID: 1161691264}
   - component: {fileID: 1161691263}
   m_Layer: 5
-  m_Name: Button (15)
+  m_Name: Up Ds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21201,7 +21201,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 49.60733, y: 71.20419}
+  m_AnchoredPosition: {x: 50, y: 71.20419}
   m_SizeDelta: {x: 40, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1161691263
@@ -22684,7 +22684,7 @@ GameObject:
   - component: {fileID: 1257963131}
   - component: {fileID: 1257963130}
   m_Layer: 5
-  m_Name: Button (23)
+  m_Name: Up As
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22707,7 +22707,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 249.60733, y: 71.20419}
+  m_AnchoredPosition: {x: 250, y: 71.20419}
   m_SizeDelta: {x: 40, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1257963130
@@ -23205,7 +23205,7 @@ GameObject:
   - component: {fileID: 1287113114}
   - component: {fileID: 1287113113}
   m_Layer: 5
-  m_Name: Button (6)
+  m_Name: Low G
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23326,7 +23326,7 @@ GameObject:
   - component: {fileID: 1293288791}
   - component: {fileID: 1293288790}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Low D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24877,6 +24877,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1426130583}
+  - component: {fileID: 1426130584}
   m_Layer: 5
   m_Name: Piano
   m_TagString: Untagged
@@ -24908,17 +24909,17 @@ RectTransform:
   - {fileID: 2122124711}
   - {fileID: 551192226}
   - {fileID: 1155399396}
-  - {fileID: 695027551}
-  - {fileID: 995598687}
-  - {fileID: 570572133}
   - {fileID: 1453541247}
+  - {fileID: 695027551}
   - {fileID: 632919549}
+  - {fileID: 995598687}
   - {fileID: 2027315456}
+  - {fileID: 570572133}
   - {fileID: 93054097}
-  - {fileID: 1161691262}
-  - {fileID: 2033973838}
   - {fileID: 171966615}
+  - {fileID: 1161691262}
   - {fileID: 114566631}
+  - {fileID: 2033973838}
   - {fileID: 1257963129}
   m_Father: {fileID: 1344109575}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -24927,6 +24928,43 @@ RectTransform:
   m_AnchoredPosition: {x: 50, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1426130584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426130582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6501ea0c041a7c44c99a5e46cf408029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  notes:
+  - {fileID: 1941325615}
+  - {fileID: 1293288788}
+  - {fileID: 855098322}
+  - {fileID: 1152662741}
+  - {fileID: 1287113111}
+  - {fileID: 927953081}
+  - {fileID: 271294526}
+  - {fileID: 1064838933}
+  - {fileID: 451482571}
+  - {fileID: 2122124710}
+  - {fileID: 551192225}
+  - {fileID: 1155399395}
+  - {fileID: 1453541246}
+  - {fileID: 695027550}
+  - {fileID: 632919548}
+  - {fileID: 995598686}
+  - {fileID: 2027315455}
+  - {fileID: 570572132}
+  - {fileID: 93054096}
+  - {fileID: 171966614}
+  - {fileID: 1161691261}
+  - {fileID: 114566630}
+  - {fileID: 2033973837}
+  - {fileID: 1257963128}
 --- !u!1 &1427630200
 GameObject:
   m_ObjectHideFlags: 0
@@ -25796,7 +25834,7 @@ GameObject:
   - component: {fileID: 1453541249}
   - component: {fileID: 1453541248}
   m_Layer: 5
-  m_Name: Button (17)
+  m_Name: Up C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25819,7 +25857,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -25.39267, y: 0}
+  m_AnchoredPosition: {x: -25, y: 0}
   m_SizeDelta: {x: 50, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1453541248
@@ -32168,7 +32206,7 @@ GameObject:
   - component: {fileID: 1941325618}
   - component: {fileID: 1941325617}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Low A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33834,7 +33872,7 @@ GameObject:
   - component: {fileID: 2027315458}
   - component: {fileID: 2027315457}
   m_Layer: 5
-  m_Name: Button (19)
+  m_Name: Up G
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33857,7 +33895,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 174.60733, y: 0}
+  m_AnchoredPosition: {x: 175, y: 0}
   m_SizeDelta: {x: 50, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2027315457
@@ -33955,7 +33993,7 @@ GameObject:
   - component: {fileID: 2033973840}
   - component: {fileID: 2033973839}
   m_Layer: 5
-  m_Name: Button (16)
+  m_Name: Up Gs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33978,7 +34016,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 199.60733, y: 71.20419}
+  m_AnchoredPosition: {x: 200, y: 71.20419}
   m_SizeDelta: {x: 40, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2033973839
@@ -35876,7 +35914,7 @@ GameObject:
   - component: {fileID: 2122124713}
   - component: {fileID: 2122124712}
   m_Layer: 5
-  m_Name: Button (9)
+  m_Name: Low Fs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37770,6 +37808,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1159458586}
     - target: {fileID: 513066095316288574, guid: aa1feb720420cc346bea8af55e9f92d7, type: 3}
+      propertyPath: pianoUI
+      value: 
+      objectReference: {fileID: 1426130582}
+    - target: {fileID: 513066095316288574, guid: aa1feb720420cc346bea8af55e9f92d7, type: 3}
       propertyPath: stamina
       value: 
       objectReference: {fileID: 1643271985}
@@ -38266,8 +38308,212 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5770072301582134725, guid: ae8b909bef4a9c64ea3c709e12ca5f1b, type: 2}
     - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.size
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
       propertyPath: musicSounds.Array.size
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 2067c40d01aed664380445844e544ce4, type: 3}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[0].name
+      value: Low A
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 2f697eac8ac011a4d8321ab237d55757, type: 3}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[1].name
+      value: Low As
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 436632839ac3c974c8344685637e3592, type: 3}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[2].name
+      value: Low B
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[3].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 59f6536b2c31105478ad27f6733ce81b, type: 3}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[3].name
+      value: Low C
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[4].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: ec7560eb588e4d84fafe5d26692fde7d, type: 3}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[4].name
+      value: Low Cs
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[5].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 695aadbe2f6bd60438f521b1dcd3732b, type: 3}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[5].name
+      value: Low D
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[6].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: b7baeeaf55fb47a458504d251bfe5ddd, type: 3}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[6].name
+      value: Low Ds
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[7].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: fe9fd0b9a90b18a4db406fe6cb6db1b4, type: 3}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[7].name
+      value: Low E
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[8].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 1bbed470441ed034683bbf1a05e30454, type: 3}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[8].name
+      value: Low F
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[9].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 60f91d6b4d32c4c4b83ba11bb2988464, type: 3}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[9].name
+      value: Low Fs
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[10].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: db557629c5a8ef747bfb55b8dd23554d, type: 3}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[10].name
+      value: Low G
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[11].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 264c9faaef3f4b842827ab25bd2bd43d, type: 3}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[11].name
+      value: Low Gs
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[12].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9b18656e4b605c84fac2f6742e0d2dd6, type: 3}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[12].name
+      value: Up A
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[13].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 110f0a8802c6a124dbb73e74b0413b5f, type: 3}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[13].name
+      value: Up As
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[14].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 73b49ce9e6d0a3f40bc7be3c80da7be1, type: 3}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[14].name
+      value: Up B
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[15].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: a5f79e337aa5d5a4ca25ad4d862d1421, type: 3}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[15].name
+      value: Up C
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[16].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8d044b12a90395f4198ebf8985c3cec1, type: 3}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[16].name
+      value: Up Cs
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[17].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: a36110a55e708db499669b45b6470c0e, type: 3}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[17].name
+      value: Up D
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[18].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: f72db0bc97c328a4e9cc08d34ba01ea7, type: 3}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[18].name
+      value: Up Ds
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[19].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5987f3ba3291dfe448121c7ffa7bd5d9, type: 3}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[19].name
+      value: Up E
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[20].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5a22b19c291888041b7041c0585da3aa, type: 3}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[20].name
+      value: Up F
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[21].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: a2f1d822c4e7d9d4c9f60815728111ee, type: 3}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[21].name
+      value: Up Fs
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[22].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4336bb818296235418ebdaf6ae5884c5, type: 3}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[22].name
+      value: Up G
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[23].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 42c76cb9099c01941aa6527903400b86, type: 3}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[23].name
+      value: Up Gs
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[24].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 591c7969c48a7314fa8c5f817c3deb66, type: 3}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[24].name
+      value: Window Thud
       objectReference: {fileID: 0}
     - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
       propertyPath: musicSounds.Array.data[0].clip
@@ -38294,11 +38540,115 @@ PrefabInstance:
       value: creepyPiano
       objectReference: {fileID: 0}
     - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[0].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[1].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[2].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[3].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[4].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[5].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[6].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[7].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[8].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[9].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[10].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[11].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[12].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[13].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[14].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[15].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[16].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[17].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[18].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[19].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[20].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[21].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[22].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[23].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[24].volume
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
       propertyPath: musicSounds.Array.data[0].volume
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
       propertyPath: musicSounds.Array.data[1].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[24].spatialBlend
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
