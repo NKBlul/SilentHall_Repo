@@ -1,11 +1,13 @@
-using System.Collections;
+
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PuzzleManager : MonoBehaviour
 {
     public static PuzzleManager instance;
 
+    [Header("Organ puzzle")]
     public List<GameObject> organPuzzles = new List<GameObject>();
     public List<GameObject> puzzles = new List<GameObject>();
     public List<GameObject> jars = new List<GameObject>();
@@ -14,7 +16,10 @@ public class PuzzleManager : MonoBehaviour
     int failureCount = 0;
     public int requiredOrgans = 3;
 
-
+    [Header("Piano puzzle")]
+    private List<string> correctCombination1 = new List<string> { "Low A", "Low F", "Low G", "Low Fs" };
+    private List<string> correctCombination2 = new List<string> { "Up A", "Up F", "Up G", "Up Fs" };
+    private List<string> currentCombination = new List<string>();
 
     private void Awake()
     {
@@ -29,6 +34,7 @@ public class PuzzleManager : MonoBehaviour
         }
     }
 
+    #region ORGAN PUZZLE
     public void CheckOrganPuzzle()
     {
         if (organPlaced == requiredOrgans)
@@ -102,7 +108,34 @@ public class PuzzleManager : MonoBehaviour
                 break;
         }
     }
+    #endregion
 
+    #region PIANO PUZZLE
+    public void AddChord(string chord)
+    {
+        currentCombination.Add(chord);
+
+        if (currentCombination.Count == 4)
+        {
+            CheckCombinations();
+        }
+    }
+
+    private bool CheckCombinations()
+    {
+        if (currentCombination.SequenceEqual(correctCombination1) || currentCombination.SequenceEqual(correctCombination2))
+        {
+            Debug.Log("Correct");
+            return true;
+        }
+        Debug.Log("False");
+
+        //currentCombination.Clear();
+        //play weird sound
+        return false;
+    }
+
+    #endregion
     void TriggerGameOver()
     {
 

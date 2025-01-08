@@ -21,6 +21,6 @@ public class Piano : MonoBehaviour
     void PlayNote(string note)
     {
         AudioManager.instance.PlaySFX(note);
-        Debug.Log($"Note played: {note}");
+        PuzzleManager.instance.AddChord(note);
     }
 }
