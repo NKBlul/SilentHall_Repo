@@ -203,6 +203,13 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public float GetAudioLength(string audioName)
+    {
+        Sound s = Array.Find(sfxSounds, x => x.name == name);
+
+        return s.clip.length;
+    }
+
     public void StopMusic(AudioSource source)
     {
         source.Stop();

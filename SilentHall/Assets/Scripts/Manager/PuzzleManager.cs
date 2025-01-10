@@ -130,7 +130,9 @@ public class PuzzleManager : MonoBehaviour
         }
         Debug.Log("False");
 
-        //currentCombination.Clear();
+        currentCombination.Clear();
+        AudioManager.instance.PlaySFX("Piano Slam");
+
         //play weird sound
         return false;
     }

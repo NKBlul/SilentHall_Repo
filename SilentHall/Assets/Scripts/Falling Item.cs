@@ -9,11 +9,6 @@ public class FallingItem : MonoBehaviour
     float duration = 2f;
     [SerializeField] LayerMask collideLayer;
 
-    private void Start()
-    {
-        Move();
-    }
-
     public void Move()
     {
         StartCoroutine(MoveToPosition(transform.position + offset, duration));
@@ -38,7 +33,17 @@ public class FallingItem : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Floor"))
         {
+            AudioManager.instance.PlaySFX("Broken Glass");
             Debug.Log("Broken");
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Move();
         }
     }
 }
