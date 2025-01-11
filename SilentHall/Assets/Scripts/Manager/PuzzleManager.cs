@@ -1,7 +1,9 @@
 
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PuzzleManager : MonoBehaviour
 {
@@ -20,6 +22,7 @@ public class PuzzleManager : MonoBehaviour
     private List<string> correctCombination1 = new List<string> { "Low A", "Low F", "Low G", "Low Fs" };
     private List<string> correctCombination2 = new List<string> { "Up A", "Up F", "Up G", "Up Fs" };
     private List<string> currentCombination = new List<string>();
+    public AudioSource musicPuzzle;
 
     private void Awake()
     {
@@ -130,11 +133,33 @@ public class PuzzleManager : MonoBehaviour
         }
         Debug.Log("False");
 
-        currentCombination.Clear();
-        AudioManager.instance.PlaySFX("Piano Slam");
+        StartCoroutine(OnWrongCombination());
 
-        //play weird sound
         return false;
+    }
+
+    IEnumerator OnWrongCombination()
+    {
+        Piano piano = UIManager.instance.pianoUI.GetComponent<Piano>();
+        foreach (GameObject note in piano.GetNotes())
+        {
+            Button button = note.GetComponent<Button>();
+            button.interactable = false;
+        }
+
+        currentCombination.Clear();
+
+        AudioManager.instance.PlaySFX("Piano Slam");
+        yield return new WaitForSeconds(AudioManager.instance.GetAudioLength("Piano Slam"));
+
+        AudioManager.instance.PlaySFX("musicPuzzle");
+        yield return new WaitForSeconds(AudioManager.instance.GetAudioLength("musicPuzzle"));
+
+        foreach (GameObject note in piano.GetNotes())
+        {
+            Button button = note.GetComponent<Button>();
+            button.interactable = true;
+        }
     }
 
     #endregion

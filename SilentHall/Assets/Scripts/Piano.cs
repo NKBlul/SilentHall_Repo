@@ -23,4 +23,9 @@ public class Piano : MonoBehaviour
         AudioManager.instance.PlaySFX(note);
         PuzzleManager.instance.AddChord(note);
     }
+
+    public List<GameObject> GetNotes()
+    {
+        return notes;
+    }
 }

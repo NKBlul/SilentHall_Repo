@@ -20,6 +20,7 @@ public class PrefabManager : MonoBehaviour
     public GameObject stomachPrefab;
     public GameObject intestinePrefab;
     public GameObject tempEncounterZonePrefab;
+    public GameObject kuntilAnakPrefab;
 
     private Dictionary<string, GameObject> prefabs;
 
@@ -45,6 +46,8 @@ public class PrefabManager : MonoBehaviour
                 { "Intestine", intestinePrefab},
                 { "TempEnc", tempEncounterZonePrefab},
                 { "TempAudio", tempAudioPrefab},
+                { "Kunti", kuntilAnakPrefab},
+
             };
         }
         else

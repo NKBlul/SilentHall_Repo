@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PianoPuzzle : MonoBehaviour, IInteractable
 {
+    public Transform ghostLoc;
+
     public string GetInteractionPrompt(GameObject trigger)
     {
         return "Press E to interact with piano puzzle";
@@ -14,5 +16,8 @@ public class PianoPuzzle : MonoBehaviour, IInteractable
         GameManager.instance.TogglePlayerMovement(false);
         GameManager.instance.ShowCursor();
         UIManager.instance.pianoUI.SetActive(true);
+        PuzzleManager.instance.musicPuzzle.Pause();
+        AudioManager.instance.PlaySFX("musicPuzzle");
+        PrefabManager.instance.InstantiatePrefab("Kunti", ghostLoc);
     }
 }

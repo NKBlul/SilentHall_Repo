@@ -31,12 +31,13 @@ public class EventManager : MonoBehaviour
                 CutsceneManager.instance.PlayCutscene("cutscene 2");
                 break;
             case "event 3":
-                AudioManager.instance.PlayMusicAtPosition("creepyPiano", new Vector3(-44, 1, -14f), 1, 5, 1);
+                PuzzleManager.instance.musicPuzzle = AudioManager.instance.PlayMusicAtPosition("creepyPiano", new Vector3(-44, 1, -14f), 1, 5, 1);
                 break;
             case "Destroy":
                 Destroy(triggers);
                 break;
-            case "event 5":
+            case "event 4":
+                
                 break;
             default: 
                 break;

@@ -98,6 +98,14 @@ public class UIManager : MonoBehaviour
         //ClearText(paperText);
     }
 
+    public void ClosePianoUI(GameObject other)
+    {
+        GameManager.instance.TogglePlayerMovement(true);
+        GameManager.instance.HideCursor();
+        pianoUI.SetActive(false);
+        PuzzleManager.instance.musicPuzzle.UnPause();
+    }
+
     public void CloseNumlock()
     {
         UINumLock uiNumLock = numlockUI3d.GetComponent<UINumLock>();

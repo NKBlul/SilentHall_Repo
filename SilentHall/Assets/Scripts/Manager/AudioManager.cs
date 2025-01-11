@@ -69,7 +69,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void PlayMusicAtPosition(string name, Vector3 position, float minRange, float maxRange, float spatialBlend)
+    public AudioSource PlayMusicAtPosition(string name, Vector3 position, float minRange, float maxRange, float spatialBlend)
     {
         Sound s = Array.Find(musicSounds, x => x.name == name);
         if (s != null)
@@ -92,6 +92,7 @@ public class AudioManager : MonoBehaviour
 
                 //// Destroy after the clip finishes playing
                 //Destroy(audioObject, s.clip.length);
+                return audioSource;
             }
             else
             {
@@ -102,9 +103,10 @@ public class AudioManager : MonoBehaviour
         {
             Debug.LogWarning($"SFX with name {name} not found!");
         }
+        return null;
     }
 
-    public void PlayMusicAtPosition(string name, Transform parent, float minRange, float maxRange, float spatialBlend)
+    public AudioSource PlayMusicAtPosition(string name, Transform parent, float minRange, float maxRange, float spatialBlend)
     {
         Sound s = Array.Find(musicSounds, x => x.name == name);
         if (s != null)
@@ -127,6 +129,7 @@ public class AudioManager : MonoBehaviour
 
                 //// Destroy after the clip finishes playing
                 //Destroy(audioObject, s.clip.length);
+                return audioSource;
             }
             else
             {
@@ -137,6 +140,7 @@ public class AudioManager : MonoBehaviour
         {
             Debug.LogWarning($"SFX with name {name} not found!");
         }
+        return null;
     }
 
     public void PlaySFXAtPosition(string name, Vector3 position, float minRange, float maxRange)
