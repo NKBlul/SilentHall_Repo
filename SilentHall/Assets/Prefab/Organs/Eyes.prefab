@@ -440,7 +440,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9090153535058500910}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3fb7505b4770f514b8d2242322425c47, type: 3}
   m_Name: 
@@ -448,7 +448,7 @@ MonoBehaviour:
   player: {fileID: 0}
   playerCamera: {fileID: 0}
   lookDistance: 7
-  playerVisionAngle: 90
+  playerVisionAngle: 180
   rotationSpeed: 5
   canLook: 0
   playerLayer:

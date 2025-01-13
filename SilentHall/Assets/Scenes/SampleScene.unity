@@ -6955,11 +6955,7 @@ PrefabInstance:
     - target: {fileID: 6440509671420488259, guid: 6b1a7a285ca0b6744917996e71495094, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 604880143}
-    - target: {fileID: 6440509671420488259, guid: 6b1a7a285ca0b6744917996e71495094, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1628198329}
     - target: {fileID: 6440509671420488259, guid: 6b1a7a285ca0b6744917996e71495094, type: 3}
       propertyPath: playerCamera
       value: 
@@ -28974,7 +28970,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c390d211c75f2c6429f6238b12161c72, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -40.56
+      value: -34.53
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c390d211c75f2c6429f6238b12161c72, type: 3}
       propertyPath: m_LocalPosition.y
@@ -38396,10 +38392,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3547523612046405232, guid: 4bce02562efb8aa46a0a674f47b95539, type: 3}
-      propertyPath: tempEncounterZonePrefab
-      value: 
-      objectReference: {fileID: 2501669071746588358, guid: 06651f8e60ffc3f4783c95ea652cb2cf, type: 3}
     - target: {fileID: 6584372377912224806, guid: 4bce02562efb8aa46a0a674f47b95539, type: 3}
       propertyPath: m_Name
       value: PrefabManager
@@ -39532,11 +39524,11 @@ PrefabInstance:
       objectReference: {fileID: 5770072301582134725, guid: ae8b909bef4a9c64ea3c709e12ca5f1b, type: 2}
     - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
       propertyPath: sfxSounds.Array.size
-      value: 27
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
       propertyPath: musicSounds.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
       propertyPath: sfxSounds.Array.data[0].clip
@@ -39755,6 +39747,14 @@ PrefabInstance:
       value: Broken Glass
       objectReference: {fileID: 0}
     - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[27].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 27608c41efad377419e39c6bfac64a07, type: 3}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[27].name
+      value: musicPuzzle
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
       propertyPath: musicSounds.Array.data[0].clip
       value: 
       objectReference: {fileID: 8300000, guid: 0ff2e07c7f42f3746a7014042cd2ffb3, type: 3}
@@ -39911,6 +39911,10 @@ PrefabInstance:
       value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[27].volume
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
       propertyPath: musicSounds.Array.data[0].volume
       value: 1
       objectReference: {fileID: 0}
@@ -39936,6 +39940,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
       propertyPath: sfxSounds.Array.data[26].spatialBlend
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104200877594678139, guid: dacea4074368de54aa32b123e5cb6143, type: 3}
+      propertyPath: sfxSounds.Array.data[27].spatialBlend
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -40289,6 +40297,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ghostLoc: {fileID: 1779109708}
+  hasSpawned: 0
 --- !u!65 &8170630496048618064
 BoxCollider:
   m_ObjectHideFlags: 0

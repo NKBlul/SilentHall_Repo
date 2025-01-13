@@ -5,6 +5,7 @@ using UnityEngine;
 public class PianoPuzzle : MonoBehaviour, IInteractable
 {
     public Transform ghostLoc;
+    public bool hasSpawned = false;
 
     public string GetInteractionPrompt(GameObject trigger)
     {
@@ -18,6 +19,10 @@ public class PianoPuzzle : MonoBehaviour, IInteractable
         UIManager.instance.pianoUI.SetActive(true);
         PuzzleManager.instance.musicPuzzle.Pause();
         AudioManager.instance.PlaySFX("musicPuzzle");
-        PrefabManager.instance.InstantiatePrefab("Kunti", ghostLoc);
+        if (!hasSpawned)
+        {
+            PrefabManager.instance.InstantiatePrefab("Kunti", ghostLoc);
+            hasSpawned  = true;
+        }
     }
 }

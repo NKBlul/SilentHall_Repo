@@ -56,3 +56,5 @@ MonoBehaviour:
   eyePrefab: {fileID: 9090153535058500910, guid: 6b1a7a285ca0b6744917996e71495094, type: 3}
   stomachPrefab: {fileID: 4143227264730337662, guid: 0bc382379842ac84695cd46eca00da7d, type: 3}
   intestinePrefab: {fileID: 3127608299889309517, guid: 5ccb5af70e91c4941afb3f584b693f56, type: 3}
+  tempEncounterZonePrefab: {fileID: 2501669071746588358, guid: 06651f8e60ffc3f4783c95ea652cb2cf, type: 3}
+  kuntilAnakPrefab: {fileID: 1572144656054307743, guid: ae15eab4ba2bbd44ca762c89a585d8ce, type: 3}
