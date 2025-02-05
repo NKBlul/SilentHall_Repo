@@ -19,10 +19,10 @@ public class PianoPuzzle : MonoBehaviour, IInteractable
         UIManager.instance.pianoUI.SetActive(true);
         PuzzleManager.instance.musicPuzzle.Pause();
         AudioManager.instance.PlaySFX("musicPuzzle");
-        if (!hasSpawned)
-        {
-            PrefabManager.instance.InstantiatePrefab("Kunti", ghostLoc);
-            hasSpawned  = true;
-        }
+        //if (!hasSpawned)
+        //{
+        //    PrefabManager.instance.InstantiatePrefab("Kunti", ghostLoc);
+        //    hasSpawned  = true;
+        //}
     }
 }
